@@ -101,6 +101,10 @@
     transform:scale(1.12);transform-origin:center 22%;user-select:none;-webkit-user-drag:none;pointer-events:none;
     opacity:0;transition:opacity .4s}
   .tt-img.ready{opacity:1}
+  /* intro: reversed MI10 gesture clip, played once, then it hands off to the turntable */
+  .tt-intro{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 26%;
+    transform:scale(1.12);transform-origin:center 22%;z-index:3;pointer-events:none;transition:opacity .55s ease}
+  .tt-intro.gone{opacity:0}
   #tt{cursor:grab;touch-action:pan-y}
   #tt.grabbing{cursor:grabbing}
   .tt-load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:2}
@@ -470,7 +474,7 @@
     .foot-base{flex-direction:column;align-items:flex-start;gap:8px}
     .nav-links,.link-cta{display:none}
     .hero-grid{grid-template-columns:1fr;gap:36px;padding:48px 0 64px;min-height:0}
-    .stage{max-width:420px;margin:0 auto}
+    .stage{width:100%;max-width:440px;margin-left:auto;margin-right:auto}
     .scrollcue{display:none}
   }
   @media (prefers-reduced-motion:reduce){
@@ -521,6 +525,9 @@
       <!-- right: live turntable — real MI10 render, drag to spin -->
       <div class="stage reveal" id="tt" aria-label="Interactive 3D turntable of a real Jockey style, drag to spin">
         <img id="tt-img" class="tt-img" alt="Jockey MI10 sports bra, round 34C - drag to rotate" draggable="false" />
+        <video id="tt-intro" class="tt-intro" muted autoplay playsinline preload="auto" poster="public/assets/demo/mi10_gesture_poster.jpg">
+          <source src="public/assets/demo/mi10_gesture_rev.mp4" type="video/mp4">
+        </video>
         <div class="tt-load" id="tt-load"><span></span></div>
         <div class="size-tag"><span class="k">Her size</span><span class="v">34C</span></div>
         <div class="tt-cue" id="tt-cue"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/></svg> Drag to spin</div>
@@ -1010,7 +1017,7 @@
   // Same frame model as the shopper experience: 18 frames, 20° apart.
   var CDN = "https://test-bucket-dr-v1.s3.eu-west-3.amazonaws.com/turntable/MI10_Round_C34_grid_gym";
   var COUNT = 18, STEP = 20, PX_PER_FRAME = 11;
-  var frames = [], loaded = 0, index = 2;   // start at ~40° (a flattering 3/4)
+  var frames = [], loaded = 0, index = 0;   // rest at frame 0 (front), matching the intro clip's final pose
   var img = document.getElementById("tt-img");
   var stage = document.getElementById("tt");
   var cue = document.getElementById("tt-cue");
@@ -1022,20 +1029,44 @@
 
   var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Preload all frames; reveal + start spinning once the starting frame is in.
+  // Intro: play the reversed MI10 gesture clip, then hand off to the live turntable.
+  // The turntable frames preload during the clip so the switch is instant.
+  var intro = document.getElementById("tt-intro");
+  var startFrameReady = false, introDone = false, started = false;
+
+  function beginTurntable(){
+    if(started || !startFrameReady || !introDone) return;
+    started = true;
+    img.classList.add("ready");           // reveal the turntable frame (under the video)
+    loadEl.classList.add("done");
+    if(intro) intro.classList.add("gone"); // crossfade the clip out
+    stage.classList.add("spun");
+    // Hold on the front view (frame 0). The shopper drags to spin.
+  }
+
+  // Preload all frames; the starting frame gates the hand-off.
   for(var i=0;i<COUNT;i++){
     (function(i){
       var im = new Image();
       im.onload = function(){
         loaded++;
-        if(i===index){
-          img.src = im.src; img.classList.add("ready"); loadEl.classList.add("done");
-          // Show the fit hotspots on the resting view briefly, then rotate.
-          setTimeout(function(){ stage.classList.add("spun"); startSpin(); }, reduce ? 999999 : 1500);
-        }
+        if(i===index){ img.src = im.src; startFrameReady = true; beginTurntable(); }
       };
       im.src = src(i); frames[i] = im;
     })(i);
+  }
+
+  if(intro && !reduce){
+    var finishIntro = function(){ introDone = true; beginTurntable(); };
+    intro.addEventListener("ended", finishIntro);
+    intro.addEventListener("error", finishIntro);
+    setTimeout(finishIntro, 8000);                 // safety net if 'ended' never fires
+    var pp = intro.play && intro.play();           // autoplay (muted); if blocked, skip to turntable
+    if(pp && pp.catch) pp.catch(finishIntro);
+  } else {
+    introDone = true;
+    if(intro) intro.classList.add("gone");
+    beginTurntable();
   }
 
   // Continuous autospin. Advances a frame on a timer; pauses while the shopper
@@ -1065,7 +1096,7 @@
   function up(){
     if(!drag.active) return;
     drag.active = false; stage.classList.remove("grabbing");
-    resumeT = setTimeout(startSpin, 2500);   // resume autospin after a pause
+    // stays where released — no autospin
   }
 
   // Pause the spin when the hero isn't on screen (perf).
