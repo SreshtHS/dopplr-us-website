@@ -1,1 +1,1 @@
-# Dopplr US website (static, for feedback)
+dopplr US site (static). Source in local dopplr-website/us.
