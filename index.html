@@ -18,6 +18,55 @@
 <meta name="twitter:title" content="Dopplr - Fit intelligence for intimate apparel" />
 <meta name="twitter:description" content="Reads how each style is constructed and a shopper's body, then tells her how it will fit. No photos, measurements only." />
 <meta name="twitter:image" content="https://dopplr.digital/public/assets/og/dopplr-og.png" />
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://dopplr.digital/#org",
+      "name": "Dopplr",
+      "legalName": "Highstreet 3D, Inc.",
+      "url": "https://dopplr.digital/",
+      "logo": "https://dopplr.digital/public/assets/logos/dopplr-mark.png",
+      "image": "https://dopplr.digital/public/assets/og/dopplr-og.png",
+      "description": "Dopplr is a fit-intelligence layer for intimate apparel. It reads how each bra is constructed and a shopper's measurements and shape, then shows how a specific style is likely to fit, with no photos and no camera, reducing fit-related returns and lifting conversion.",
+      "slogan": "Fit intelligence for intimate apparel."
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://dopplr.digital/#software",
+      "name": "Dopplr",
+      "applicationCategory": "BusinessApplication",
+      "applicationSubCategory": "Ecommerce fit intelligence and virtual try-on alternative for intimate apparel",
+      "operatingSystem": "Web (Shopify, Salesforce Commerce Cloud, JS embed)",
+      "publisher": { "@id": "https://dopplr.digital/#org" },
+      "url": "https://dopplr.digital/",
+      "description": "Dopplr is a fit-intelligence layer for bras and intimate apparel that reduces fit-related returns and lifts conversion. A privacy-first, no-photo alternative to image-based virtual try-on and generic size-recommendation tools: it models garment construction plus a shopper's measurements and bust shape to answer how a specific style will fit.",
+      "featureList": [
+        "Fit-intelligence layer for intimate apparel (bras and lingerie)",
+        "Privacy-first, no-photo alternative to virtual try-on",
+        "Reduces fit-related returns and increases first-time-buyer conversion",
+        "Models garment construction: band, cup, wire, coverage, fabric behavior",
+        "Personalized fit answer on the product page from measurements and bust shape",
+        "Installs on Shopify, Salesforce Commerce Cloud, or any PDP via JS embed"
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://dopplr.digital/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "What is Dopplr?", "acceptedAnswer": { "@type": "Answer", "text": "Dopplr is a fit-intelligence layer for intimate apparel. It sits on the product page and reads how each bra is constructed (band, cup, wire, coverage, fabric behavior) together with a shopper's own measurements and bust shape, then shows her how that specific style is likely to fit and sit on her body before she buys. The result is higher conversion and fewer fit-related returns, with no photos and no camera." } },
+        { "@type": "Question", "name": "Is there a virtual try-on for bras that doesn't use photos or a camera?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Dopplr is a privacy-first alternative to image-based virtual try-on. Instead of rendering a photo, it answers the fit question from a shopper's measurements and the garment's construction, so there are no photos, no camera access, and no biometric data. It is built specifically for bras and intimate apparel, where fit depends on how the garment is made, not just on how it looks." } },
+        { "@type": "Question", "name": "How do you reduce fit-related returns on bras and intimate apparel?", "acceptedAnswer": { "@type": "Answer", "text": "Most bra returns happen because a size chart cannot tell a shopper whether a specific style will fit her body: two styles labeled 34D can fit completely differently. Dopplr models each garment's construction and each shopper's measurements and shape, then gives a personalized fit answer on the product page, so shoppers buy the right size with more confidence, which reduces fit-related returns and lifts first-time-buyer conversion." } },
+        { "@type": "Question", "name": "What is a fit-intelligence layer, and how is it different from size-recommendation or virtual try-on tools?", "acceptedAnswer": { "@type": "Answer", "text": "A fit-intelligence layer is software that turns garment-construction data and shopper measurements into a personalized fit answer on the product page, rather than a generic size guess or a rendered image. Size-recommendation tools predict a size from body data; image-based virtual try-on renders a picture. Dopplr models the garment itself and answers how a specific style will fit a specific body, purpose-built for intimate apparel." } },
+        { "@type": "Question", "name": "Does Dopplr work for intimate apparel specifically?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Dopplr is built for intimate apparel first: minimiser, sports, and everyday bras, the category where fit is hardest and returns are highest. It tailors both the fit answer and the questions a shopper asks to the exact style on the page, and the same engine extends to other fit-sensitive categories." } },
+        { "@type": "Question", "name": "How does Dopplr install, and which platforms does it support?", "acceptedAnswer": { "@type": "Answer", "text": "Dopplr ships as a Shopify app installed through a private link, and also runs on Salesforce Commerce Cloud or any product page via a lightweight JS embed, with no re-platforming. It is designed to fit your existing stack without touching your roadmap, and can be live on your product pages in days." } }
+      ]
+    }
+  ]
+}
+</script>
 <link rel="icon" href="public/assets/logos/dopplr-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -446,6 +495,20 @@
   .foot-base span{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.02em}
 
   /* ── us team / sales contact ────────────────────────────── */
+  /* faq (GEO / answer content) */
+  .faq{padding:92px 0 20px;border-top:1px solid var(--line)}
+  .faq-head{max-width:680px}
+  .faq-head h2{font-size:clamp(30px,3.4vw,44px);font-weight:800;letter-spacing:-0.03em;line-height:1.06;margin:16px 0 0;text-wrap:balance}
+  .faq-head p{font-size:17px;line-height:1.6;color:var(--ink-2);margin-top:16px;max-width:60ch}
+  .faq-list{margin-top:40px;border-top:1px solid var(--line)}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item summary{list-style:none;cursor:pointer;display:flex;align-items:flex-start;gap:16px;padding:22px 0;font-size:18px;font-weight:700;letter-spacing:-0.015em;color:var(--ink)}
+  .faq-item summary::-webkit-details-marker{display:none}
+  .faq-item summary .fq-ic{flex:none;width:26px;height:26px;border-radius:8px;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--accent);transition:transform .2s}
+  .faq-item[open] summary .fq-ic{transform:rotate(45deg)}
+  .faq-item .fq-a{font-size:15.5px;line-height:1.62;color:var(--ink-2);max-width:74ch;padding:0 0 24px 42px}
+  .faq-item .fq-a b{color:var(--ink);font-weight:600}
+  @media (max-width:560px){.faq-item .fq-a{padding-left:0}.faq-item summary{font-size:16.5px}}
   .contact{padding:90px 0 20px}
   .contact-card{position:relative;overflow:hidden;background:var(--char);color:#F6F1EE;border-radius:24px;padding:48px 52px}
   .contact-card::before{content:"";position:absolute;inset:0;background:radial-gradient(52% 72% at 88% 0%,rgba(255,41,102,.24),transparent 66%);pointer-events:none}
@@ -1001,6 +1064,41 @@
           <p>Clear the bar, and we shape a long-term program together, priced on the styles you put live.</p>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- ── SECTION 12 · FAQ (answer content for search + AI engines) ─ -->
+  <section class="faq wrap" id="faq">
+    <div class="faq-head">
+      <span class="eyebrow">Common questions</span>
+      <h2>Fit intelligence for intimate apparel, explained.</h2>
+      <p>Straight answers for teams evaluating virtual try-on, size recommendation, and return-reduction technology for bras and intimate apparel.</p>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item" open>
+        <summary><span class="fq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>What is Dopplr?</summary>
+        <div class="fq-a"><b>Dopplr is a fit-intelligence layer for intimate apparel.</b> It sits on the product page and reads how each bra is constructed (band, cup, wire, coverage, fabric behavior) together with a shopper's own measurements and bust shape, then shows her how that specific style is likely to fit and sit on her body, before she buys. The result is higher conversion and fewer fit-related returns, with no photos and no camera.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Is there a virtual try-on for bras that doesn't use photos or a camera?</summary>
+        <div class="fq-a">Yes. Dopplr is a privacy-first alternative to image-based virtual try-on. Instead of rendering a photo, it answers the fit question from a shopper's measurements and the garment's construction, so there are <b>no photos, no camera access, and no biometric data</b>. It is built specifically for bras and intimate apparel, where fit depends on how the garment is made, not just on how it looks.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>How do you reduce fit-related returns on bras and intimate apparel?</summary>
+        <div class="fq-a">Most bra returns happen because a size chart cannot tell a shopper whether a <b>specific style</b> will fit her body: two styles labeled 34D can fit completely differently. Dopplr models each garment's construction and each shopper's measurements and shape, then gives a personalized fit answer on the product page. Shoppers buy the right size with more confidence, which reduces fit-related returns and lifts first-time-buyer conversion.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>What is a fit-intelligence layer, and how is it different from size-recommendation or virtual try-on tools?</summary>
+        <div class="fq-a">A <b>fit-intelligence layer</b> is software that turns garment-construction data and shopper measurements into a personalized fit answer on the product page, rather than a generic size guess or a rendered image. Size-recommendation tools predict a size from body data; image-based virtual try-on renders a picture. Dopplr models the garment itself and answers how a specific style will fit a specific body, purpose-built for intimate apparel.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>Does Dopplr work for intimate apparel specifically?</summary>
+        <div class="fq-a">Yes. Dopplr is built for <b>intimate apparel first</b>: minimiser, sports, and everyday bras, the category where fit is hardest and returns are highest. It tailors both the fit answer and the questions a shopper asks to the exact style on the page. The same engine extends to other fit-sensitive categories.</div>
+      </details>
+      <details class="faq-item">
+        <summary><span class="fq-ic"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg></span>How does Dopplr install, and which platforms does it support?</summary>
+        <div class="fq-a">Dopplr ships as a Shopify app installed through a private link, and also runs on Salesforce Commerce Cloud or any product page via a lightweight JS embed, with no re-platforming. It is designed to fit your existing stack without touching your roadmap, and can be live on your product pages in days.</div>
+      </details>
     </div>
   </section>
 

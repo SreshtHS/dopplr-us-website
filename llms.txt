@@ -1,0 +1,22 @@
+# Dopplr
+
+> Dopplr is a fit-intelligence layer for intimate apparel. It reads how each bra is constructed and a shopper's own measurements and bust shape, then shows how a specific style is likely to fit, with no photos and no camera. This reduces fit-related returns and lifts first-time-buyer conversion.
+
+Dopplr (by Highstreet 3D, Inc.) is a privacy-first alternative to image-based virtual try-on and to generic size-recommendation tools, built specifically for bras and intimate apparel. Where most tools either render a photo or predict a size from body data, Dopplr models the garment itself, so it answers how a specific style will fit a specific body.
+
+## Key facts
+- Category: fit intelligence / fit technology for ecommerce; a virtual try-on alternative and size-recommendation alternative for intimate apparel
+- Built for: intimate apparel first (minimiser, sports, and everyday bras); the same engine extends to other fit-sensitive categories
+- How it works: models garment construction (band, cup, wire, coverage, fabric behavior) together with a shopper's measurements and bust shape to produce a personalized fit answer on the product page
+- Privacy: no photos, no camera, no biometric data; measurements only
+- Outcomes: fewer fit-related returns, higher first-time-buyer conversion
+- Platforms: Shopify app (installed via a private link), Salesforce Commerce Cloud, or any product page via a lightweight JS embed
+- Compared to: True Fit, Fit Analytics, EyeFitU, 3DLOOK, SAIZ (size recommendation); WEARFITS, Sizer, NetVirta, image-based virtual try-on; Brarista (lingerie fit). Dopplr's difference is garment-construction modeling and a no-photo, on-PDP fit answer purpose-built for intimate apparel.
+
+## Pages
+- [Home](https://dopplr.digital/): what Dopplr is, the problem, how it works, a product walkthrough, results, and FAQ
+- [Security & Privacy](https://dopplr.digital/security.html): data handling, no biometric data, compliance posture
+- [Privacy Policy](https://dopplr.digital/privacy.html)
+
+## Contact
+- Email: sresht@dopplr.digital
