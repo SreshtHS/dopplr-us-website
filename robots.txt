@@ -30,4 +30,4 @@ Allow: /
 User-agent: cohere-ai
 Allow: /
 
-Sitemap: https://dopplr.digital/sitemap.xml
+Sitemap: https://dopplr.info/sitemap.xml

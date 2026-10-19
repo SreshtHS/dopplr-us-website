@@ -14,9 +14,9 @@ Dopplr (by Highstreet 3D, Inc.) is a privacy-first alternative to image-based vi
 - Compared to: True Fit, Fit Analytics, EyeFitU, 3DLOOK, SAIZ (size recommendation); WEARFITS, Sizer, NetVirta, image-based virtual try-on; Brarista (lingerie fit). Dopplr's difference is garment-construction modeling and a no-photo, on-PDP fit answer purpose-built for intimate apparel.
 
 ## Pages
-- [Home](https://dopplr.digital/): what Dopplr is, the problem, how it works, a product walkthrough, results, and FAQ
-- [Security & Privacy](https://dopplr.digital/security.html): data handling, no biometric data, compliance posture
-- [Privacy Policy](https://dopplr.digital/privacy.html)
+- [Home](https://dopplr.info/): what Dopplr is, the problem, how it works, a product walkthrough, results, and FAQ
+- [Security & Privacy](https://dopplr.info/security.html): data handling, no biometric data, compliance posture
+- [Privacy Policy](https://dopplr.info/privacy.html)
 
 ## Contact
-- Email: sresht@dopplr.digital
+- Email: sresht@highstreet3d.co
