@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Security &amp; Privacy - Dopplr</title>
-<meta name="description" content="How Dopplr handles data: measurements only, no images, no camera, no biometric identifiers. Data handling, retention, compliance posture, and how to reach our US team." />
+<meta name="description" content="How Dopplr handles data: measurements only, no photos, no camera, no biometric data. Encryption, retention, access control, GDPR and CCPA." />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Dopplr" />
 <meta property="og:title" content="Security &amp; Privacy - Dopplr" />
@@ -15,6 +15,13 @@
 <meta property="og:image:height" content="630" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:image" content="https://dopplr.info/public/assets/og/dopplr-og.png" />
+<link rel="canonical" href="https://dopplr.info/security" />
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "url": "https://dopplr.info/security", "name": "Security & Privacy", "isPartOf": {"@id": "https://dopplr.info/#website"}, "publisher": {"@id": "https://dopplr.info/#org"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dopplr", "item": "https://dopplr.info/"}, {"@type": "ListItem", "position": 2, "name": "Security & Privacy", "item": "https://dopplr.info/security"}]}
+</script>
 <link rel="icon" href="public/assets/logos/dopplr-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,11 +29,12 @@
 <style>
   :root{
     --bg:#FCFBFA; --bg-alt:#F5F2EF; --ink:#0A0A0A; --ink-2:#3A3A3A; --muted:#6E6A64;
-    --line:#E7E2DC; --line-2:#D8D2CA; --accent:#FF2966; --accent-deep:#E0104F;
+    --line:#E7E2DC; --line-2:#D8D2CA; --accent:#FF2966; --accent-deep:#E0104F; --accent-text:#C8104A; --accent-btn:#E0104F;
     --blush:#F3DED6; --blush-2:#E9C7BC; --char:#20191c;
     --sans:'Schibsted Grotesk',system-ui,sans-serif; --mono:'JetBrains Mono',monospace;
   }
   @media (prefers-color-scheme:dark){:root{
+    --accent-text:#FF5C8A; --accent-btn:#E0104F;
     --bg:#131011; --bg-alt:#1b1618; --ink:#f4efec; --ink-2:#cdc5c0; --muted:#9c938d;
     --line:#2c2528; --line-2:#3a3236; --blush:#3a2a2c; --blush-2:#4a3236;
   }}
@@ -105,7 +113,7 @@
   .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px}
   .foot-brand .brand{color:var(--ink)}
   .foot-brand>p{font-size:14px;line-height:1.55;color:var(--ink-2);margin:14px 0 0;max-width:32ch}
-  .foot-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .foot-col h4,.foot-col h3.fh{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
   .foot-col a{display:block;font-size:14px;color:var(--ink-2);text-decoration:none;padding:6px 0}
   .foot-col a:hover{color:var(--accent)}
   .foot-base{display:flex;justify-content:space-between;gap:16px;margin-top:46px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap}
@@ -119,7 +127,9 @@
     .foot-brand{grid-column:1/-1}
     .contact-card{padding:32px 26px}
   }
+
 </style>
+<link rel="stylesheet" href="public/css/site.css" />
 <!-- RB2B visitor identification -->
 <script>!function(key) {if (window.reb2b) return;window.reb2b = {loaded: true};var s = document.createElement("script");s.async = true;s.src = "https://ddwl4m2hdecbv.cloudfront.net/b/" + key + "/" + key + ".js.gz";document.getElementsByTagName("script")[0].parentNode.insertBefore(s, document.getElementsByTagName("script")[0]);}("EN4M0HJ1P5OM");</script>
 </head>
@@ -130,10 +140,11 @@
     <div class="nav-links">
       <a href="innerwear.html">Innerwear</a>
       <a href="dresswear.html">Dresswear</a>
-      <a href="innerwear.html#results">Results</a>
-      <a href="innerwear.html#fit-intelligence">Fit Intelligence</a>      <a href="security.html">Security</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="results-enamor.html">Results</a>
+      <a href="faq.html">FAQ</a>
     </div>
-    <a class="btn btn-primary" href="#contact">Talk to us</a>
+    <a class="btn btn-primary" href="index.html#audit">Free fit audit</a>
   </nav>
 </header>
 
@@ -274,28 +285,30 @@
       <p>Category-specific try-on for innerwear and dresswear: measurements only, no photos, no camera.</p>
     </div>
     <div class="foot-col">
-      <h4>Platform</h4>
-      <a href="innerwear.html#how">How it works</a>
-      <a href="innerwear.html#fit-intelligence">Fit Intelligence</a>
-      <a href="innerwear.html#enterprise">Enterprise readiness</a>
-    </div>
-    <div class="foot-col">
-      <h4>Company</h4>
+      <h3 class="fh">Categories</h3>
       <a href="innerwear.html">Innerwear</a>
       <a href="dresswear.html">Dresswear</a>
-      <a href="innerwear.html#results">Results</a>
+      <a href="compare.html">Dopplr vs AI try-on</a>
+    </div>
+    <div class="foot-col">
+      <h3 class="fh">Company</h3>
+      <a href="how-it-works.html">How it works</a>
+      <a href="results-enamor.html">Results: Enamor</a>
+      <a href="faq.html">FAQ</a>
       <a href="security.html">Security &amp; Privacy</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
     <div class="foot-col">
-      <h4>Get started</h4>
-      <a href="innerwear.html#demo">Try the demo</a>
-      <a href="#contact">Book a call</a>    </div>
+      <h3 class="fh">Get started</h3>
+      <a href="index.html#audit">Free fit audit</a>
+      <a href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+    </div>
   </div>
   <div class="wrap foot-base">
     <span>Highstreet 3D, Inc. - Delaware C-Corp · US HQ Edison, NJ · Bengaluru, IN</span>
     <span>© 2026 Dopplr</span>
   </div>
 </footer>
+<script src="public/js/site.js" defer></script>
 </body>
 </html>

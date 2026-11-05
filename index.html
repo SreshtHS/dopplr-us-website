@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Dopplr - Category-specific try-on for innerwear and dresswear</title>
-<meta name="description" content="Dopplr builds try-on one category at a time. Innerwear: will this bra fit her shape. Dresswear: where the hem lands at her height. Measurements only, no photos, no camera." />
+<title>Dopplr - Try-on for innerwear and dresswear brands on Shopify</title>
+<meta name="description" content="Dopplr shows each shopper your bra or dress on her own body shape and size, on the product page. Live on Shopify. No photos. Free fit audit." />
 <link rel="canonical" href="https://dopplr.info/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Dopplr" />
@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://dopplr.info/public/assets/og/dopplr-og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","@id":"https://dopplr.info/#org","name":"Dopplr","legalName":"Highstreet 3D, Inc.","url":"https://dopplr.info/","logo":"https://dopplr.info/public/assets/logos/dopplr-mark.png","email":"sresht@highstreet3d.co"}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dopplr.info/#org", "name": "Dopplr", "legalName": "Highstreet 3D, Inc.", "url": "https://dopplr.info/", "logo": "https://dopplr.info/public/assets/logos/dopplr-mark.png", "email": "sresht@highstreet3d.co"}, {"@type": "WebSite", "@id": "https://dopplr.info/#website", "url": "https://dopplr.info/", "name": "Dopplr", "publisher": {"@id": "https://dopplr.info/#org"}}, {"@type": "SoftwareApplication", "@id": "https://dopplr.info/#software", "name": "Dopplr", "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Shopify app, Salesforce Commerce Cloud, JS embed)", "publisher": {"@id": "https://dopplr.info/#org"}, "url": "https://dopplr.info/", "description": "Shows each shopper how a specific bra or dress fits her own body shape and size on the product page, from a few measurements, with no photos or camera.", "offers": {"@type": "Offer", "price": "40", "priceCurrency": "USD", "description": "Innerwear pilot, per style per month"}}]}
 </script>
 <link rel="icon" href="public/assets/logos/dopplr-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -23,13 +23,14 @@
 <style>
   :root{
     --bg:#FCFBFA; --bg-alt:#F5F2EF; --ink:#0A0A0A; --ink-2:#3A3A3A; --muted:#6E6A64;
-    --line:#E7E2DC; --line-2:#D8D2CA; --accent:#FF2966; --accent-deep:#E0104F;
+    --line:#E7E2DC; --line-2:#D8D2CA; --accent:#FF2966; --accent-deep:#E0104F; --accent-text:#C8104A; --accent-btn:#E0104F;
     --blush:#F3DED6; --blush-2:#E9C7BC; --char:#20191c;
     --sans:"Schibsted Grotesk",system-ui,-apple-system,sans-serif;
     --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
     --wrap:1200px;
   }
   @media (prefers-color-scheme:dark){:root{
+    --accent-text:#FF5C8A; --accent-btn:#E0104F;
     --bg:#131011; --bg-alt:#1b1618; --ink:#f4efec; --ink-2:#cdc5c0; --muted:#9c938d;
     --line:#2c2528; --line-2:#3a3236; --blush:#3a2a2c; --blush-2:#4a3236;
   }}
@@ -135,10 +136,10 @@
   .tt-cue.hide{opacity:0}
 
   /* ── entrance animation ─────────────────────────────────── */
-  .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.65,.3,1) forwards}
+  .reveal{transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.65,.3,1) forwards}
   .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}
   .stage.reveal{transform:translateY(20px) scale(.99);animation:riseStage .9s cubic-bezier(.2,.65,.3,1) .2s forwards}
-  @keyframes rise{to{opacity:1;transform:none}}
+  @keyframes rise{to{transform:none}}
   @keyframes riseStage{to{opacity:1;transform:none}}
 
   /* ── section 2 · live demo ──────────────────────────────── */
@@ -437,7 +438,7 @@
   .foot-backers{display:flex;align-items:center;gap:22px;margin-top:22px;flex-wrap:wrap}
   .foot-backers img{height:18px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.42;transition:.2s}
   .foot-backers img:hover{filter:grayscale(0);opacity:1}
-  .foot-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .foot-col h4,.foot-col h3.fh{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
   .foot-col a{display:block;font-size:14px;color:var(--ink-2);text-decoration:none;padding:6px 0;transition:color .15s}
   .foot-col a:hover{color:var(--accent)}
   .foot-base{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:50px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap}
@@ -624,12 +625,13 @@
   @media (max-width:980px){.aeo-grid{grid-template-columns:1fr}}
   @media (max-width:980px){.hem-row,.shape-row{grid-template-columns:repeat(2,minmax(0,1fr))}.pilot-grid{grid-template-columns:1fr}}
   @media (max-width:560px){.hem-row{gap:12px}.hem-meta .h{font-size:18px}}
+
 </style>
 
 <style>
   /* ── hub ─────────────────────────────────────────────── */
   .hub-hero{padding:88px 0 40px}
-  .hub-hero h1{font-size:clamp(36px,5.4vw,64px);line-height:1.04;letter-spacing:-.035em;font-weight:800;max-width:17ch;margin:14px 0 22px}
+  .hub-hero h1{font-size:clamp(36px,5.4vw,64px);line-height:1.04;letter-spacing:-.035em;font-weight:800;max-width:18ch;margin:14px 0 22px}
   .hub-hero h1 .hl{color:var(--accent)}
   .hub-hero .subhead{max-width:62ch}
   .cats{padding:24px 0 72px}
@@ -697,6 +699,7 @@
   }
   @media (max-width:560px){.cat-body{padding:22px 18px}.cat-proof{grid-template-columns:1fr}.hub-hero{padding:56px 0 24px}}
 </style>
+<link rel="stylesheet" href="public/css/site.css" />
 </head>
 <body>
 
@@ -706,15 +709,14 @@
     <div class="nav-links" id="nav-links">
       <a href="innerwear.html">Innerwear</a>
       <a href="dresswear.html">Dresswear</a>
-      <a href="#why">Why per category</a>
-      <a href="#platform">Platform</a>
-      <a href="#start">Pricing</a>
-      <a href="security.html">Security</a>
-      <a class="m-only" href="#categories">Choose a category</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="results-enamor.html">Results</a>
+      <a href="faq.html">FAQ</a>
+      <a class="m-only" href="#audit">Free fit audit</a>
     </div>
     <div class="nav-cta">
-      <a class="link-cta" href="#categories">Choose a category</a>
-      <a class="btn btn-primary" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+      <a class="link-cta" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-primary" href="#audit">Free fit audit</a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -723,21 +725,27 @@
 </header>
 
 <main id="top">
-  <section class="hub-hero">
+  <section class="hub-hero" id="hero">
     <div class="wrap">
-      <span class="eyebrow reveal d1">Category-specific try-on</span>
-      <h1 class="reveal d2">A bra and a dress don't ask the same question.<br><span class="hl">Your try-on shouldn't either.</span></h1>
-      <p class="subhead reveal d3">Generic try-on paints a garment onto a photo. Dopplr is built one category at a time: it models how that category's garments are made, takes the shopper's own measurements, and answers the question that category actually turns on, on her body, before she buys.</p>
+      <span class="eyebrow reveal d1">Try-on for innerwear and dresswear brands</span>
+      <h1 class="reveal d2">Show every shopper how it fits <span class="hl">her</span>, before she buys.</h1>
+      <p class="subhead reveal d3">Dopplr puts your bra or dress on her own body shape and size, right on the product page, from a few measurements she already knows. At Enamor, first-time buyers who used it converted 19% more than those who didn't.</p>
       <div class="support reveal d4">
-        <span><b>No photos.</b></span>
-        <span><b>No camera access.</b></span>
-        <span><b>No likeness.</b></span>
+        <span><b>Live on Shopify.</b></span>
+        <span><b>No photos, no camera.</b></span>
         <span>Measurements only.</span>
       </div>
-      <div class="cta-row reveal d5">
-        <a class="btn btn-accent" href="#categories">Choose your category →</a>
-        <a class="btn btn-ghost" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
-      </div>
+      <form class="audit-form hero-audit reveal d5" data-audit-form novalidate>
+        <div class="af-fields">
+          <label><span>Store URL</span><input name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourbrand.com" required /></label>
+          <label><span>Work email</span><input name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required /></label>
+          <label class="af-cat"><span>Category</span><select name="category"><option value="both" selected>Both</option></select></label>
+          <input class="af-hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="btn btn-accent" type="submit">Get a free fit audit</button>
+        </div>
+        <p class="af-msg" role="status" aria-live="polite"></p>
+        <p class="af-fine">Free review of your product pages. Nothing to install. Or <a href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">book a demo</a>.</p>
+      </form>
       <div class="hub-trust reveal d5">
         <div class="ht-group"><span class="ht-label">Live with</span><img src="public/assets/logos/jockey.webp" alt="Jockey" /><img class="logo-enamor" src="public/assets/logos/enamor.png" alt="Enamor" /></div>
         <span class="ht-div" aria-hidden="true"></span>
@@ -751,7 +759,7 @@
 
       <a class="cat" href="innerwear.html">
         <div class="cat-fig">
-          <img class="fill" src="https://turntable.dopplr.info/turntable/MI10_Round_C34_grid_gym/frame_000_close_eye.webp" alt="A Jockey sports bra rendered on a round 34C body" loading="lazy" />
+          <img class="fill" src="public/assets/turntable/mi10_card.webp" alt="A Jockey sports bra rendered on a round 34C body" loading="lazy" />
           <span class="cat-status live">Live</span>
         </div>
         <div class="cat-body">
@@ -773,7 +781,7 @@
 
       <a class="cat" href="dresswear.html">
         <div class="cat-fig">
-          <img src="public/assets/dress/rectangle_small_150/frame_000.webp" alt="A tiered floral midi dress rendered on a 150 cm body" loading="lazy" />
+          <img src="public/assets/dress/thumbs/rectangle_small_150.webp" alt="A tiered floral midi dress rendered on a 150 cm body" loading="lazy" />
           <span class="cat-status new">Early access</span>
         </div>
         <div class="cat-body">
@@ -878,6 +886,32 @@
     </div>
   </section>
 
+  <section class="audit" id="audit">
+    <div class="wrap audit-grid">
+      <div>
+        <span class="eyebrow">Free fit audit</span>
+        <h2>See what your product pages don't tell a shopper about fit.</h2>
+        <p class="lead">Send us your store. We'll read your product pages the way a shopper does and show you where she's left guessing, then what fixing it would take. Free, and nothing to install.</p>
+        <ul class="audit-gets">
+          <li>Five of your product pages, reviewed for what a shopper can and can't tell about fit</li>
+          <li>The styles most likely to raise fit questions and returns</li>
+          <li>What putting Dopplr live on them would take, and what it would cost</li>
+        </ul>
+      </div>
+      <form class="audit-form" data-audit-form novalidate>
+        <div class="af-fields">
+          <label><span>Store URL</span><input name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourbrand.com" required /></label>
+          <label><span>Work email</span><input name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required /></label>
+          <label class="af-cat"><span>Category</span><select name="category"><option value="innerwear">Innerwear</option><option value="dresswear">Dresswear</option><option value="both" selected>Both</option></select></label>
+          <input class="af-hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="btn btn-accent" type="submit">Get my free fit audit</button>
+        </div>
+        <p class="af-msg" role="status" aria-live="polite"></p>
+        <p class="af-fine">No install and no store access needed: we only look at your public product pages.</p>
+      </form>
+    </div>
+  </section>
+
   <section class="contact wrap" id="contact">
     <div class="contact-card">
       <div class="contact-inner">
@@ -910,25 +944,24 @@
       </div>
     </div>
     <div class="foot-col">
-      <h4>Platform</h4>
-      <a href="#platform">How it works</a>
-      <a href="#platform">Fit engine</a>
-      <a href="#platform">Fit conversation</a>
-      <a href="#platform">Fit visualization</a>
-    </div>
-    <div class="foot-col">
-      <h4>Company</h4>
+      <h3 class="fh">Categories</h3>
       <a href="innerwear.html">Innerwear</a>
       <a href="dresswear.html">Dresswear</a>
-      <a href="innerwear.html#results">Results</a>
-      <a href="innerwear.html#fit-intelligence">Fit Intelligence</a>
+      <a href="compare.html">Dopplr vs AI try-on</a>
+    </div>
+    <div class="foot-col">
+      <h3 class="fh">Company</h3>
+      <a href="how-it-works.html">How it works</a>
+      <a href="results-enamor.html">Results: Enamor</a>
+      <a href="faq.html">FAQ</a>
       <a href="security.html">Security &amp; Privacy</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
     <div class="foot-col">
-      <h4>Get started</h4>
-      <a href="#categories">See the demo</a>
-      <a href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>    </div>
+      <h3 class="fh">Get started</h3>
+      <a href="#audit">Free fit audit</a>
+      <a href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+    </div>
   </div>
   <div class="wrap foot-base">
     <span>Highstreet 3D, Inc. - Delaware C-Corp · US HQ Edison, NJ · Bengaluru, IN</span>
@@ -942,5 +975,6 @@
   if(tg&&links) tg.addEventListener("click",function(){ var o=links.classList.toggle("open"); tg.setAttribute("aria-expanded",String(o)); });
 })();
 </script>
+<script src="public/js/site.js" defer></script>
 </body>
 </html>

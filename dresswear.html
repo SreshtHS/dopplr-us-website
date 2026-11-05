@@ -11,6 +11,12 @@
 <meta property="og:title" content="Dopplr Dresswear - See where the hem lands on her" />
 <meta property="og:description" content="The same dress on her body shape, at her height, from measurements only. No photos, no camera." />
 <meta property="og:url" content="https://dopplr.info/dresswear" />
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "WebPage", "url": "https://dopplr.info/dresswear", "name": "Dopplr Dresswear", "isPartOf": {"@id": "https://dopplr.info/#website"}, "about": {"@id": "https://dopplr.info/#software"}}
+</script>
+<script type="application/ld+json">
+{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Dopplr", "item": "https://dopplr.info/"}, {"@type": "ListItem", "position": 2, "name": "Dresswear", "item": "https://dopplr.info/dresswear"}]}
+</script>
 <link rel="icon" href="public/assets/logos/dopplr-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,13 +24,14 @@
 <style>
   :root{
     --bg:#FCFBFA; --bg-alt:#F5F2EF; --ink:#0A0A0A; --ink-2:#3A3A3A; --muted:#6E6A64;
-    --line:#E7E2DC; --line-2:#D8D2CA; --accent:#FF2966; --accent-deep:#E0104F;
+    --line:#E7E2DC; --line-2:#D8D2CA; --accent:#FF2966; --accent-deep:#E0104F; --accent-text:#C8104A; --accent-btn:#E0104F;
     --blush:#F3DED6; --blush-2:#E9C7BC; --char:#20191c;
     --sans:"Schibsted Grotesk",system-ui,-apple-system,sans-serif;
     --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
     --wrap:1200px;
   }
   @media (prefers-color-scheme:dark){:root{
+    --accent-text:#FF5C8A; --accent-btn:#E0104F;
     --bg:#131011; --bg-alt:#1b1618; --ink:#f4efec; --ink-2:#cdc5c0; --muted:#9c938d;
     --line:#2c2528; --line-2:#3a3236; --blush:#3a2a2c; --blush-2:#4a3236;
   }}
@@ -130,10 +137,10 @@
   .tt-cue.hide{opacity:0}
 
   /* ── entrance animation ─────────────────────────────────── */
-  .reveal{opacity:0;transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.65,.3,1) forwards}
+  .reveal{transform:translateY(14px);animation:rise .7s cubic-bezier(.2,.65,.3,1) forwards}
   .d1{animation-delay:.05s}.d2{animation-delay:.15s}.d3{animation-delay:.25s}.d4{animation-delay:.35s}.d5{animation-delay:.45s}
   .stage.reveal{transform:translateY(20px) scale(.99);animation:riseStage .9s cubic-bezier(.2,.65,.3,1) .2s forwards}
-  @keyframes rise{to{opacity:1;transform:none}}
+  @keyframes rise{to{transform:none}}
   @keyframes riseStage{to{opacity:1;transform:none}}
 
   /* ── section 2 · live demo ──────────────────────────────── */
@@ -432,7 +439,7 @@
   .foot-backers{display:flex;align-items:center;gap:22px;margin-top:22px;flex-wrap:wrap}
   .foot-backers img{height:18px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.42;transition:.2s}
   .foot-backers img:hover{filter:grayscale(0);opacity:1}
-  .foot-col h4{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
+  .foot-col h4,.foot-col h3.fh{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 12px}
   .foot-col a{display:block;font-size:14px;color:var(--ink-2);text-decoration:none;padding:6px 0;transition:color .15s}
   .foot-col a:hover{color:var(--accent)}
   .foot-base{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:50px;padding-top:22px;border-top:1px solid var(--line);flex-wrap:wrap}
@@ -620,7 +627,9 @@
   @media (max-width:980px){.hem-row,.shape-row{grid-template-columns:repeat(2,minmax(0,1fr))}.pilot-grid{grid-template-columns:1fr}}
   @media (max-width:560px){.hem-row{gap:12px}.hem-meta .h{font-size:18px}}
   .start-lead{max-width:62ch;color:var(--ink-2);margin-top:14px;font-size:17px}
+
 </style>
+<link rel="stylesheet" href="public/css/site.css" />
 </head>
 <body>
 
@@ -630,15 +639,14 @@
     <div class="nav-links" id="nav-links">
       <a href="innerwear.html">Innerwear</a>
       <a href="dresswear.html" aria-current="page">Dresswear</a>
-      <a href="#hem">Hem demo</a>
-      <a href="#how">How it works</a>
-      <a href="#start">Get started</a>
-      <a href="security.html">Security</a>
-      <a class="m-only" href="#hem">See the demo</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="results-enamor.html">Results</a>
+      <a href="faq.html">FAQ</a>
+      <a class="m-only" href="#audit">Free fit audit</a>
     </div>
     <div class="nav-cta">
-      <a class="link-cta" href="#hem">See the demo</a>
-      <a class="btn btn-primary" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+      <a class="link-cta" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+      <a class="btn btn-primary" href="#audit">Free fit audit</a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -647,7 +655,7 @@
 </header>
 
 <main id="top">
-  <section class="hero">
+  <section class="hero" id="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
         <div class="vswitch reveal d1" aria-label="Category"><a href="innerwear.html">Innerwear</a><a class="on" href="dresswear.html" aria-current="page">Dresswear</a></div>
@@ -662,14 +670,14 @@
           <span>Height, shape and measurements only.</span>
         </div>
         <div class="cta-row reveal d5">
-          <a class="btn btn-accent" href="#hem">See the hem change →</a>
-          <a class="btn btn-ghost" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+          <a class="btn btn-accent" href="#audit">Get a free fit audit →</a>
+          <a class="btn btn-ghost" href="#hem">See the hem change</a>
         </div>
       </div>
 
       <div class="reveal">
         <div class="dstage" id="ds" aria-label="Interactive turntable of a tiered floral midi dress on a chosen body shape, drag to spin">
-          <img id="ds-img" alt="Tiered floral midi dress on the selected body, drag to rotate" draggable="false" />
+          <img id="ds-img" src="public/assets/dress/rectangle_small_150/frame_000.webp" fetchpriority="high" alt="Tiered floral midi dress on the selected body, drag to rotate" draggable="false" />
           <div class="tag" id="ds-tag">Rectangle · Slim · 150 cm</div>
           <div class="cue"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/></svg> Drag to spin</div>
           <div class="caption">Live render of a real <b>tiered floral midi</b>, one garment file, on the body she describes.</div>
@@ -721,7 +729,7 @@
       <div class="hem-row">
         <div class="hem-card">
           <div class="hem-fig">
-            <img src="public/assets/dress/rectangle_small_150/frame_000.webp" alt="The same dress on a 150 cm model: hem at the ankle" loading="lazy" />
+            <img src="public/assets/dress/thumbs/rectangle_small_150.webp" alt="The same dress on a 150 cm model: hem at the ankle" loading="lazy" />
             <div class="hem-line" style="top:94.4%"><span>6 cm off the floor</span></div>
             <div class="hem-floor" style="top:98.5%"></div>
           </div>
@@ -729,7 +737,7 @@
         </div>
         <div class="hem-card">
           <div class="hem-fig">
-            <img src="public/assets/dress/hourglass_small_158/frame_000.webp" alt="The same dress on a 158 cm model: hem just above the ankle" loading="lazy" />
+            <img src="public/assets/dress/thumbs/hourglass_small_158.webp" alt="The same dress on a 158 cm model: hem just above the ankle" loading="lazy" />
             <div class="hem-line" style="top:88.7%"><span>15 cm off the floor</span></div>
             <div class="hem-floor" style="top:98.5%"></div>
           </div>
@@ -737,7 +745,7 @@
         </div>
         <div class="hem-card">
           <div class="hem-fig">
-            <img src="public/assets/dress/spoon_small_166/frame_000.webp" alt="The same dress on a 166 cm model: hem at the lower calf" loading="lazy" />
+            <img src="public/assets/dress/thumbs/spoon_small_166.webp" alt="The same dress on a 166 cm model: hem at the lower calf" loading="lazy" />
             <div class="hem-line" style="top:84.0%"><span>23 cm off the floor</span></div>
             <div class="hem-floor" style="top:98.9%"></div>
           </div>
@@ -745,7 +753,7 @@
         </div>
         <div class="hem-card">
           <div class="hem-fig">
-            <img src="public/assets/dress/triangle_small_174/frame_000.webp" alt="The same dress on a 174 cm model: hem at mid-calf" loading="lazy" />
+            <img src="public/assets/dress/thumbs/triangle_small_174.webp" alt="The same dress on a 174 cm model: hem at mid-calf" loading="lazy" />
             <div class="hem-line" style="top:80.4%"><span>31 cm off the floor</span></div>
             <div class="hem-floor" style="top:99.0%"></div>
           </div>
@@ -764,10 +772,10 @@
         <p>Dopplr renders the dress on the body she describes, so what she sees is how the empire waist sits on her ribcage, how the tiers fall over her hips and where the V neck opens on her, not on a fit model.</p>
       </div>
       <div class="shape-row">
-        <div class="shape-card"><div class="fig"><img src="public/assets/dress/rectangle_large_150/frame_000.webp" alt="Dress on a rectangle-shaped body" loading="lazy" /></div><div class="meta"><span class="k">Rectangle</span><h3>Straight through the waist</h3><p>The drawstring does the shaping. Showing her where it sits is the difference between "shapeless" and "relaxed".</p></div></div>
-        <div class="shape-card"><div class="fig"><img src="public/assets/dress/hourglass_large_158/frame_000.webp" alt="Dress on an hourglass-shaped body" loading="lazy" /></div><div class="meta"><span class="k">Hourglass</span><h3>Waist above her natural waist</h3><p>An empire seam sits high on a defined waist. She sees that before she buys, not in the mirror.</p></div></div>
-        <div class="shape-card"><div class="fig"><img src="public/assets/dress/spoon_large_166/frame_000.webp" alt="Dress on a spoon-shaped body" loading="lazy" /></div><div class="meta"><span class="k">Spoon</span><h3>Tiers over the hip</h3><p>The second tier starts at the widest point. The render shows whether it skims or clings on her.</p></div></div>
-        <div class="shape-card"><div class="fig"><img src="public/assets/dress/triangle_large_174/frame_000.webp" alt="Dress on a triangle-shaped body" loading="lazy" /></div><div class="meta"><span class="k">Triangle</span><h3>Narrow shoulders, fuller hip</h3><p>Strap placement and skirt volume both change the read. One turntable answers both.</p></div></div>
+        <div class="shape-card"><div class="fig"><img src="public/assets/dress/thumbs/rectangle_large_150.webp" alt="Dress on a rectangle-shaped body" loading="lazy" /></div><div class="meta"><span class="k">Rectangle</span><h3>Straight through the waist</h3><p>The drawstring does the shaping. Showing her where it sits is the difference between "shapeless" and "relaxed".</p></div></div>
+        <div class="shape-card"><div class="fig"><img src="public/assets/dress/thumbs/hourglass_large_158.webp" alt="Dress on an hourglass-shaped body" loading="lazy" /></div><div class="meta"><span class="k">Hourglass</span><h3>Waist above her natural waist</h3><p>An empire seam sits high on a defined waist. She sees that before she buys, not in the mirror.</p></div></div>
+        <div class="shape-card"><div class="fig"><img src="public/assets/dress/thumbs/spoon_large_166.webp" alt="Dress on a spoon-shaped body" loading="lazy" /></div><div class="meta"><span class="k">Spoon</span><h3>Tiers over the hip</h3><p>The second tier starts at the widest point. The render shows whether it skims or clings on her.</p></div></div>
+        <div class="shape-card"><div class="fig"><img src="public/assets/dress/thumbs/triangle_large_174.webp" alt="Dress on a triangle-shaped body" loading="lazy" /></div><div class="meta"><span class="k">Triangle</span><h3>Narrow shoulders, fuller hip</h3><p>Strap placement and skirt volume both change the read. One turntable answers both.</p></div></div>
       </div>
     </div>
   </section>
@@ -806,6 +814,32 @@
     </div>
   </section>
 
+  <section class="audit" id="audit">
+    <div class="wrap audit-grid">
+      <div>
+        <span class="eyebrow">Free fit audit</span>
+        <h2>See what your product pages don't tell a shopper about fit.</h2>
+        <p class="lead">Send us your store. We'll read your product pages the way a shopper does and show you where she's left guessing, then what fixing it would take. Free, and nothing to install.</p>
+        <ul class="audit-gets">
+          <li>Five of your product pages, reviewed for what a shopper can and can't tell about fit</li>
+          <li>The styles most likely to raise fit questions and returns</li>
+          <li>What putting Dopplr live on them would take, and what it would cost</li>
+        </ul>
+      </div>
+      <form class="audit-form" data-audit-form novalidate>
+        <div class="af-fields">
+          <label><span>Store URL</span><input name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourbrand.com" required /></label>
+          <label><span>Work email</span><input name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required /></label>
+          <label class="af-cat"><span>Category</span><select name="category"><option value="innerwear">Innerwear</option><option value="dresswear" selected>Dresswear</option><option value="both">Both</option></select></label>
+          <input class="af-hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button class="btn btn-accent" type="submit">Get my free fit audit</button>
+        </div>
+        <p class="af-msg" role="status" aria-live="polite"></p>
+        <p class="af-fine">No install and no store access needed: we only look at your public product pages.</p>
+      </form>
+    </div>
+  </section>
+
   <section class="contact wrap" id="contact">
     <div class="contact-card">
       <div class="contact-inner">
@@ -838,25 +872,24 @@
       </div>
     </div>
     <div class="foot-col">
-      <h4>Platform</h4>
-      <a href="#how">How it works</a>
-      <a href="#how">Fit engine</a>
-      <a href="#how">Fit conversation</a>
-      <a href="#how">Fit visualization</a>
-    </div>
-    <div class="foot-col">
-      <h4>Company</h4>
+      <h3 class="fh">Categories</h3>
       <a href="innerwear.html">Innerwear</a>
       <a href="dresswear.html">Dresswear</a>
-      <a href="innerwear.html#results">Results</a>
-      <a href="innerwear.html#fit-intelligence">Fit Intelligence</a>
+      <a href="compare.html">Dopplr vs AI try-on</a>
+    </div>
+    <div class="foot-col">
+      <h3 class="fh">Company</h3>
+      <a href="how-it-works.html">How it works</a>
+      <a href="results-enamor.html">Results: Enamor</a>
+      <a href="faq.html">FAQ</a>
       <a href="security.html">Security &amp; Privacy</a>
       <a href="privacy.html">Privacy Policy</a>
     </div>
     <div class="foot-col">
-      <h4>Get started</h4>
-      <a href="#hem">See the demo</a>
-      <a href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>    </div>
+      <h3 class="fh">Get started</h3>
+      <a href="#audit">Free fit audit</a>
+      <a href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+    </div>
   </div>
   <div class="wrap foot-base">
     <span>Highstreet 3D, Inc. - Delaware C-Corp · US HQ Edison, NJ · Bengaluru, IN</span>
@@ -884,13 +917,20 @@
   stage.addEventListener("pointerdown",function(e){ down=true; x0=e.clientX; i0=state.i; stage.setPointerCapture(e.pointerId); });
   stage.addEventListener("pointermove",function(e){ if(!down) return; state.i=i0-Math.round((e.clientX-x0)/PX); show(); });
   stage.addEventListener("pointerup",function(){ down=false; }); stage.addEventListener("pointercancel",function(){ down=false; });
-  preload(); show();
-  // one slow intro turn so the page shows it's live
-  if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches){ var n=0, t=setInterval(function(){ if(down){ clearInterval(t); return; } state.i++; show(); if(++n>=COUNT) clearInterval(t); },110); }
+  show();
+  stage.addEventListener("pointerdown",preload);
+  // Frames load after the page does, then one slow intro turn so the page shows it's live.
+  function startSpin(){
+    preload();
+    if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var n=0, t=setInterval(function(){ if(down){ clearInterval(t); return; } state.i++; show(); if(++n>=COUNT) clearInterval(t); },110);
+  }
+  if(document.readyState==="complete") setTimeout(startSpin,800); else window.addEventListener("load",function(){ setTimeout(startSpin,800); });
   // mobile nav (same as index)
   var tg=document.querySelector(".nav-toggle"), links=document.getElementById("nav-links");
   if(tg&&links) tg.addEventListener("click",function(){ var o=links.classList.toggle("open"); tg.setAttribute("aria-expanded",String(o)); });
 })();
 </script>
+<script src="public/js/site.js" defer></script>
 </body>
 </html>

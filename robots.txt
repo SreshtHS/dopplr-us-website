@@ -29,5 +29,18 @@ User-agent: CCBot
 Allow: /
 User-agent: cohere-ai
 Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+User-agent: Meta-ExternalAgent
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
 
 Sitemap: https://dopplr.info/sitemap.xml

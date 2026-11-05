@@ -1,15 +1,16 @@
 # Dopplr
 
-> Dopplr is a fit-intelligence layer for intimate apparel. It reads how each bra is constructed and a shopper's own measurements and bust shape, then shows how a specific style is likely to fit, with no photos and no camera. This reduces fit-related returns and lifts first-time-buyer conversion.
+> Dopplr shows each shopper how a specific garment fits her own body on the product page, built per category. Innerwear (bras and intimate apparel) is live with brands including Jockey and Enamor; dresswear is in early access. Shoppers enter a few measurements; no photos and no camera.
 
-Dopplr (by Highstreet 3D, Inc.) is a privacy-first alternative to image-based virtual try-on and to generic size-recommendation tools, built specifically for bras and intimate apparel. Where most tools either render a photo or predict a size from body data, Dopplr models the garment itself, so it answers how a specific style will fit a specific body.
+Dopplr (by Highstreet 3D, Inc.) is a privacy-first alternative to image-based virtual try-on and to generic size-recommendation tools, built for fit-sensitive categories, starting with bras and intimate apparel and now dresses. Where most tools either render a photo or predict a size from body data, Dopplr models the garment itself, so it answers how a specific style will fit a specific body.
 
 ## Key facts
-- Category: fit intelligence / fit technology for ecommerce; a virtual try-on alternative and size-recommendation alternative for intimate apparel
-- Built for: intimate apparel first (minimiser, sports, and everyday bras); the same engine extends to other fit-sensitive categories
+- Category: fit intelligence / fit technology for ecommerce; a virtual try-on alternative and size-recommendation alternative for innerwear and dresswear
+- Built for: innerwear (minimiser, sports and everyday bras), live; dresswear (hem position by height, fit by body shape), early access
+- Pricing: innerwear pilots at $40 per style per month, typically starting with the top 20 styles
 - How it works: models garment construction (band, cup, wire, coverage, fabric behavior) together with a shopper's measurements and bust shape to produce a personalized fit answer on the product page
 - Privacy: no photos, no camera, no biometric data; measurements only
-- Outcomes: fewer fit-related returns, higher first-time-buyer conversion
+- Outcomes (innerwear, Enamor deployment): 19% first-time-buyer conversion lift and 3.5x product-page engagement (observed); 17% fewer fit-related returns (modeled). No dresswear results yet.
 - Platforms: Shopify app (installed via a private link), Salesforce Commerce Cloud, or any product page via a lightweight JS embed
 - Compared to: True Fit, Fit Analytics, EyeFitU, 3DLOOK, SAIZ (size recommendation); WEARFITS, Sizer, NetVirta, image-based virtual try-on; Brarista (lingerie fit). Dopplr's difference is garment-construction modeling and a no-photo, on-PDP fit answer purpose-built for intimate apparel.
 
@@ -17,6 +18,10 @@ Dopplr (by Highstreet 3D, Inc.) is a privacy-first alternative to image-based vi
 - [Home](https://dopplr.info/): category-specific try-on, choose innerwear or dresswear
 - [Innerwear](https://dopplr.info/innerwear): what Dopplr does for bras and intimate apparel, how it works, a product walkthrough, results, and FAQ
 - [Dresswear](https://dopplr.info/dresswear): the same dress on a shopper's body shape and height, with an interactive hem demo
+- [How it works](https://dopplr.info/how-it-works): setup steps, what a brand provides per category, what the shopper does, how results are measured
+- [Results: Enamor](https://dopplr.info/results-enamor): innerwear deployment results with observed/modeled labels
+- [FAQ](https://dopplr.info/faq): setup, pricing, results, shopper experience, data
+- [Compare](https://dopplr.info/compare): Dopplr vs generative AI try-on vs size charts
 - [Security & Privacy](https://dopplr.info/security.html): data handling, no biometric data, compliance posture
 - [Privacy Policy](https://dopplr.info/privacy.html)
 

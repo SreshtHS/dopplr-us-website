@@ -1,0 +1,89 @@
+/* ── a11y overrides (loaded after each page's own styles, so these win) ── */
+.eyebrow,.cat-go,.cat-k,.shape-card .k,.cred-label--accent,.bt-kind,.pn,.hl,.cat h2 em,.hub-hero h1 .hl,.bt-watch{color:var(--accent-text,#C8104A)}
+.btn-accent,.cat-status.new,.hem-line span{background:var(--accent-btn,#E0104F)}
+.btn-accent:hover{background:#C8104A}
+.contact .eyebrow,.scoper-out .eyebrow,.close .eyebrow{color:#FF7A9E}
+.fi-phead .s,.fi-row .rl,.fi-panel .fi-foot{color:#B3A8A2}
+.scoper-in .pn,.phase2 .pn,.phases2 .pn{color:var(--accent-text,#C8104A)}
+.foot-col h3.fh{font-size:11px}
+
+/* Shared components used on every page: free fit audit, FAQ, steps, comparison, case study. */
+
+/* ── free fit audit ─────────────────────────────────────── */
+.audit{padding:88px 0;border-top:1px solid var(--line);background:var(--bg-alt)}
+.audit-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
+.audit h2{font-size:clamp(28px,3.6vw,42px);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:14px 0 14px}
+.audit .lead{color:var(--ink-2);font-size:17px;max-width:52ch}
+.audit-gets{list-style:none;margin-top:22px;display:grid;gap:10px}
+.audit-gets li{position:relative;padding-left:26px;color:var(--ink-2);font-size:15.5px}
+.audit-gets li::before{content:"";position:absolute;left:0;top:.35em;width:14px;height:14px;border-radius:50%;background:var(--accent-btn,#E0104F);box-shadow:inset 0 0 0 4px var(--bg-alt)}
+.audit-form{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:26px}
+.af-fields{display:grid;gap:14px}
+.af-fields label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--ink)}
+.af-fields input,.af-fields select{font:inherit;font-size:16px;font-weight:400;padding:13px 14px;border-radius:12px;border:1px solid var(--line-2);background:var(--bg);color:var(--ink);width:100%}
+.af-fields input:focus,.af-fields select:focus{outline:2px solid var(--accent-btn,#E0104F);outline-offset:1px}
+.af-fields .btn{width:100%;justify-content:center;margin-top:4px}
+.af-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.af-msg{margin-top:12px;font-size:14px;min-height:1.2em;color:var(--ink-2)}
+.af-msg.ok{color:#1a7f4b;font-weight:600}
+.af-msg.err{color:var(--accent-text,#C8104A);font-weight:600}
+.af-fine{margin-top:10px;font-size:12.5px;color:var(--muted)}
+.audit-form.sent .af-fields{opacity:.55;pointer-events:none}
+.hero-audit{margin-top:26px;max-width:620px}
+.hero-audit .af-fields{grid-template-columns:1.2fr 1.2fr auto;align-items:end}
+.hero-audit .af-fields label span{position:absolute;left:-9999px}
+.hero-audit .af-fields .btn{width:auto;margin:0;white-space:nowrap;padding:13px 18px}
+.hero-audit .af-cat{display:none}
+@media (prefers-color-scheme:dark){.af-msg.ok{color:#5fd394}}
+@media (max-width:880px){.audit-grid{grid-template-columns:1fr;gap:28px}.hero-audit .af-fields{grid-template-columns:1fr}.hero-audit .af-fields .btn{width:100%}}
+
+/* ── generic content pages ──────────────────────────────── */
+.page-hero{padding:80px 0 36px}
+.page-hero h1{font-size:clamp(34px,5vw,58px);line-height:1.05;letter-spacing:-.035em;font-weight:800;max-width:20ch;margin:14px 0 18px}
+.page-hero .subhead{max-width:62ch}
+.block{padding:64px 0;border-top:1px solid var(--line)}
+.block h2{font-size:clamp(26px,3.2vw,38px);line-height:1.1;letter-spacing:-.025em;font-weight:800;margin:12px 0 10px;max-width:24ch}
+.block .lead{color:var(--ink-2);max-width:64ch;font-size:17px}
+.steps{list-style:none;margin-top:28px;display:grid;gap:0;counter-reset:st}
+.steps li{display:grid;grid-template-columns:64px 1fr;gap:24px;padding:26px 0;border-top:1px solid var(--line-2)}
+.steps li::before{counter-increment:st;content:counter(st,decimal-leading-zero);font-family:var(--mono);font-size:13px;color:var(--muted);padding-top:4px}
+.steps h3{font-size:19px;letter-spacing:-.01em;margin-bottom:6px}
+.steps p{color:var(--ink-2)}
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin-top:28px}
+.panel{border:1px solid var(--line);border-radius:18px;padding:24px;background:var(--bg)}
+.panel h3{font-size:19px;margin-bottom:10px}
+.panel ul{padding-left:18px;color:var(--ink-2);display:grid;gap:6px}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
+@media (max-width:880px){.two{grid-template-columns:1fr}.steps li{grid-template-columns:44px 1fr;gap:14px}}
+
+/* FAQ */
+.faq-list{margin-top:24px;border-top:1px solid var(--line-2)}
+.faq-list details{border-bottom:1px solid var(--line-2);padding:20px 0}
+.faq-list summary{cursor:pointer;font-weight:700;font-size:17.5px;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-family:var(--mono);color:var(--muted);font-size:20px;line-height:1}
+.faq-list details[open] summary::after{content:"–"}
+.faq-list details p{margin-top:12px;color:var(--ink-2);max-width:72ch}
+.faq-group{margin-top:44px}
+.faq-group:first-of-type{margin-top:16px}
+
+/* comparison table */
+.ctable{margin-top:28px;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.crow{display:grid;grid-template-columns:1.1fr 1fr 1fr 1fr}
+.crow>span{padding:16px 18px;border-top:1px solid var(--line);font-size:15px;color:var(--ink-2)}
+.crow.chead>span{border-top:0;background:var(--bg-alt);font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink)}
+.crow .ck{font-weight:700;color:var(--ink)}
+.crow .us{background:color-mix(in srgb,var(--accent) 6%,transparent)}
+@media (max-width:880px){.crow{grid-template-columns:1fr}.crow.chead{display:none}.crow>span:not(.ck){border-top:0;padding-top:2px}
+  .crow>span:nth-child(2)::before{content:"Dopplr · ";font-weight:700;color:var(--ink)}
+  .crow>span:nth-child(3)::before{content:"Generative AI try-on · ";font-weight:700;color:var(--ink)}
+  .crow>span:nth-child(4)::before{content:"Size charts & size recommenders · ";font-weight:700;color:var(--ink)}}
+
+/* case study figures */
+.figs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:28px}
+.fig{border:1px solid var(--line);border-radius:18px;padding:22px;background:var(--bg)}
+.fig .n{display:block;font-size:44px;font-weight:800;letter-spacing:-.04em;line-height:1}
+.fig .l{display:block;font-weight:700;margin-top:10px}
+.fig .d{display:block;color:var(--ink-2);font-size:14.5px;margin-top:6px}
+.fig .t{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+@media (max-width:880px){.figs{grid-template-columns:1fr}}
