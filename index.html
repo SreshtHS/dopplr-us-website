@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://dopplr.info/public/assets/og/dopplr-og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dopplr.info/#org", "name": "Dopplr", "legalName": "Highstreet 3D, Inc.", "url": "https://dopplr.info/", "logo": "https://dopplr.info/public/assets/logos/dopplr-mark.png", "email": "sresht@highstreet3d.co"}, {"@type": "WebSite", "@id": "https://dopplr.info/#website", "url": "https://dopplr.info/", "name": "Dopplr", "publisher": {"@id": "https://dopplr.info/#org"}}, {"@type": "SoftwareApplication", "@id": "https://dopplr.info/#software", "name": "Dopplr", "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Shopify app, Salesforce Commerce Cloud, JS embed)", "publisher": {"@id": "https://dopplr.info/#org"}, "url": "https://dopplr.info/", "description": "Shows each shopper how a specific bra or dress fits her own body shape and size on the product page, from a few measurements, with no photos or camera.", "offers": {"@type": "Offer", "price": "40", "priceCurrency": "USD", "description": "Innerwear pilot, per style per month"}}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dopplr.info/#org", "name": "Dopplr", "legalName": "Highstreet 3D, Inc.", "url": "https://dopplr.info/", "logo": "https://dopplr.info/public/assets/logos/dopplr-mark.png", "email": "sresht@highstreet3d.co"}, {"@type": "WebSite", "@id": "https://dopplr.info/#website", "url": "https://dopplr.info/", "name": "Dopplr", "publisher": {"@id": "https://dopplr.info/#org"}}, {"@type": "SoftwareApplication", "@id": "https://dopplr.info/#software", "name": "Dopplr", "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Shopify app, Salesforce Commerce Cloud, JS embed)", "publisher": {"@id": "https://dopplr.info/#org"}, "url": "https://dopplr.info/", "description": "Shows each shopper how a specific bra or dress fits her own body shape and size on the product page, from a few measurements, with no photos or camera.", "offers": [{"@type": "Offer", "name": "Pilot", "price": "30", "priceCurrency": "USD", "description": "One-time fee per SKU, minimum 20 SKUs, 3-month pilot, no platform fee"}, {"@type": "Offer", "name": "Platform", "price": "500", "priceCurrency": "USD", "description": "Monthly platform fee after the 3-month pilot"}]}]}
 </script>
 <link rel="icon" href="public/assets/logos/dopplr-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -687,6 +687,9 @@
   .start-card dt{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
   .start-card dd{font-size:15.5px;color:var(--ink-2)}
   .start-card .btn{align-self:flex-start;margin-top:auto}
+  .need{margin-top:24px;border:1px solid var(--line);border-radius:20px;padding:20px 28px;display:flex;gap:24px;align-items:baseline;background:var(--bg-alt)}
+  .need p{font-size:16px;color:var(--ink);font-weight:600}
+  @media (max-width:560px){.need{flex-direction:column;gap:6px;padding:18px}}
   @media (max-width:880px){.start-grid{grid-template-columns:1fr}.ht-div{display:none}}
   @media (max-width:560px){.start-card dl div{grid-template-columns:1fr;gap:2px}.start-card{padding:22px 18px}}
   @media (max-width:880px){
@@ -846,35 +849,33 @@
     </div>
   </section>
 
-  <section class="start" id="start">
+  <section class="start" id="pricing">
     <div class="wrap">
       <div class="how-head">
-        <span class="eyebrow">How to start</span>
-        <h2>Start small, on your own styles.</h2>
+        <span class="eyebrow">Pricing</span>
+        <h2>Pilot first. Platform fee only after.</h2>
       </div>
       <div class="start-grid">
         <div class="start-card">
-          <span class="cat-k">Innerwear · Live</span>
-          <h3>Pilot your top 20 styles</h3>
+          <span class="cat-k">Pilot · Months 1–3</span>
+          <h3>$30 per SKU, one time</h3>
           <dl>
-            <div><dt>Price</dt><dd>$40 per style per month</dd></div>
-            <div><dt>Time to live</dt><dd>Typically 2–4 weeks</dd></div>
-            <div><dt>What we need</dt><dd>Tech packs or garment specs, product imagery, size charts</dd></div>
-            <div><dt>Judged on</dt><dd>Conversion and returns, against targets you set before launch</dd></div>
+            <div><dt>Minimum</dt><dd>20 SKUs ($600)</dd></div>
+            <div><dt>Timeframe</dt><dd>3 months</dd></div>
+            <div><dt>Platform fee</dt><dd>$0 during the pilot</dd></div>
           </dl>
-          <a class="btn btn-accent" href="innerwear.html#rollout">Scope your pilot →</a>
+          <a class="btn btn-accent" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a pilot →</a>
         </div>
         <div class="start-card">
-          <span class="cat-k">Dresswear · Early access</span>
-          <h3>Start with one dress</h3>
+          <span class="cat-k">After the pilot · Month 4 on</span>
+          <h3>$500 per month</h3>
           <dl>
-            <div><dt>What you get</dt><dd>Your dress on four body shapes and four heights, with the hem marked</dd></div>
-            <div><dt>What we need</dt><dd>A 3D pattern file (CLO 3D or Browzwear) or a graded spec with fabric details, plus your size and length charts</dd></div>
-            <div><dt>Status</dt><dd>Working with a small number of brands now</dd></div>
+            <div><dt>Platform fee</dt><dd>$500 per month</dd></div>
+            <div><dt>Starts</dt><dd>Once the 3-month pilot ends</dd></div>
           </dl>
-          <a class="btn btn-ghost" href="dresswear.html#start">See what it takes →</a>
         </div>
       </div>
+      <div class="need"><span class="cat-k">What we need</span><p>Your CLO 3D files for the SKUs in the pilot.</p></div>
     </div>
   </section>
 
