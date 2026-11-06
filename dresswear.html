@@ -554,9 +554,6 @@
   }
 
   /* ── dresswear page ─────────────────────────────────────── */
-  .vswitch{display:inline-flex;gap:4px;background:var(--bg-alt);border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:18px}
-  .vswitch a{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:7px 14px;border-radius:999px;color:var(--muted)}
-  .vswitch a.on{background:var(--ink);color:var(--bg)}
   .dstage{position:relative;aspect-ratio:3/4;border-radius:22px;overflow:hidden;border:1px solid var(--line);background:#2a2422;cursor:grab;user-select:none;touch-action:pan-y;box-shadow:0 30px 60px -30px rgba(0,0,0,.35)}
   .dstage:active{cursor:grabbing}
   .dstage img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;display:block;-webkit-user-drag:none}
@@ -642,11 +639,10 @@
       <a href="how-it-works.html">How it works</a>
       <a href="results-enamor.html">Results</a>
       <a href="faq.html">FAQ</a>
-      <a class="m-only" href="#audit">Free fit audit</a>
+      <a class="m-only" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
     </div>
     <div class="nav-cta">
-      <a class="link-cta" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
-      <a class="btn btn-primary" href="#audit">Free fit audit</a>
+      <a class="btn btn-primary" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
       <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
@@ -658,8 +654,6 @@
   <section class="hero" id="hero">
     <div class="wrap hero-grid">
       <div class="hero-copy">
-        <div class="vswitch reveal d1" aria-label="Category"><a href="innerwear.html">Innerwear</a><a class="on" href="dresswear.html" aria-current="page">Dresswear</a></div>
-        <br>
         <span class="eyebrow reveal d1">Fit intelligence for dresswear · Early access</span>
         <h1 class="reveal d2">The model is <span class="chip">5'9"</span>.<br>She's 5'2". Where does the hem land?</h1>
         <p class="subhead reveal d3">Every dress is photographed on one body. Dopplr shows each shopper the same dress on <b>her</b> body shape, at <b>her</b> height, from measurements she already knows. Midi or maxi on her, where the waist sits, how the tiers fall: answered before she buys.</p>
@@ -670,8 +664,8 @@
           <span>Height, shape and measurements only.</span>
         </div>
         <div class="cta-row reveal d5">
-          <a class="btn btn-accent" href="#audit">Get a free fit audit →</a>
-          <a class="btn btn-ghost" href="#hem">See the hem change</a>
+          <a class="btn btn-accent" href="#hem">See the hem change →</a>
+          <a class="btn btn-ghost" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
         </div>
       </div>
 
@@ -814,32 +808,6 @@
     </div>
   </section>
 
-  <section class="audit" id="audit">
-    <div class="wrap audit-grid">
-      <div>
-        <span class="eyebrow">Free fit audit</span>
-        <h2>See what your product pages don't tell a shopper about fit.</h2>
-        <p class="lead">Send us your store. We'll read your product pages the way a shopper does and show you where she's left guessing, then what fixing it would take. Free, and nothing to install.</p>
-        <ul class="audit-gets">
-          <li>Five of your product pages, reviewed for what a shopper can and can't tell about fit</li>
-          <li>The styles most likely to raise fit questions and returns</li>
-          <li>What putting Dopplr live on them would take, and what it would cost</li>
-        </ul>
-      </div>
-      <form class="audit-form" data-audit-form novalidate>
-        <div class="af-fields">
-          <label><span>Store URL</span><input name="store" type="text" inputmode="url" autocomplete="url" placeholder="yourbrand.com" required /></label>
-          <label><span>Work email</span><input name="email" type="email" autocomplete="email" placeholder="you@yourbrand.com" required /></label>
-          <label class="af-cat"><span>Category</span><select name="category"><option value="innerwear">Innerwear</option><option value="dresswear" selected>Dresswear</option><option value="both">Both</option></select></label>
-          <input class="af-hp" name="company" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <button class="btn btn-accent" type="submit">Get my free fit audit</button>
-        </div>
-        <p class="af-msg" role="status" aria-live="polite"></p>
-        <p class="af-fine">No install and no store access needed: we only look at your public product pages.</p>
-      </form>
-    </div>
-  </section>
-
   <section class="contact wrap" id="contact">
     <div class="contact-card">
       <div class="contact-inner">
@@ -887,7 +855,7 @@
     </div>
     <div class="foot-col">
       <h3 class="fh">Get started</h3>
-      <a href="#audit">Free fit audit</a>
+      <a href="how-it-works.html">How it works</a>
       <a href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
     </div>
   </div>

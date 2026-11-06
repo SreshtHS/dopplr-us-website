@@ -7,35 +7,7 @@
 .scoper-in .pn,.phase2 .pn,.phases2 .pn{color:var(--accent-text,#C8104A)}
 .foot-col h3.fh{font-size:11px}
 
-/* Shared components used on every page: free fit audit, FAQ, steps, comparison, case study. */
-
-/* ── free fit audit ─────────────────────────────────────── */
-.audit{padding:88px 0;border-top:1px solid var(--line);background:var(--bg-alt)}
-.audit-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:48px;align-items:start}
-.audit h2{font-size:clamp(28px,3.6vw,42px);line-height:1.08;letter-spacing:-.03em;font-weight:800;margin:14px 0 14px}
-.audit .lead{color:var(--ink-2);font-size:17px;max-width:52ch}
-.audit-gets{list-style:none;margin-top:22px;display:grid;gap:10px}
-.audit-gets li{position:relative;padding-left:26px;color:var(--ink-2);font-size:15.5px}
-.audit-gets li::before{content:"";position:absolute;left:0;top:.35em;width:14px;height:14px;border-radius:50%;background:var(--accent-btn,#E0104F);box-shadow:inset 0 0 0 4px var(--bg-alt)}
-.audit-form{background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:26px}
-.af-fields{display:grid;gap:14px}
-.af-fields label{display:grid;gap:6px;font-size:13px;font-weight:600;color:var(--ink)}
-.af-fields input,.af-fields select{font:inherit;font-size:16px;font-weight:400;padding:13px 14px;border-radius:12px;border:1px solid var(--line-2);background:var(--bg);color:var(--ink);width:100%}
-.af-fields input:focus,.af-fields select:focus{outline:2px solid var(--accent-btn,#E0104F);outline-offset:1px}
-.af-fields .btn{width:100%;justify-content:center;margin-top:4px}
-.af-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.af-msg{margin-top:12px;font-size:14px;min-height:1.2em;color:var(--ink-2)}
-.af-msg.ok{color:#1a7f4b;font-weight:600}
-.af-msg.err{color:var(--accent-text,#C8104A);font-weight:600}
-.af-fine{margin-top:10px;font-size:12.5px;color:var(--muted)}
-.audit-form.sent .af-fields{opacity:.55;pointer-events:none}
-.hero-audit{margin-top:26px;max-width:620px}
-.hero-audit .af-fields{grid-template-columns:1.2fr 1.2fr auto;align-items:end}
-.hero-audit .af-fields label span{position:absolute;left:-9999px}
-.hero-audit .af-fields .btn{width:auto;margin:0;white-space:nowrap;padding:13px 18px}
-.hero-audit .af-cat{display:none}
-@media (prefers-color-scheme:dark){.af-msg.ok{color:#5fd394}}
-@media (max-width:880px){.audit-grid{grid-template-columns:1fr;gap:28px}.hero-audit .af-fields{grid-template-columns:1fr}.hero-audit .af-fields .btn{width:100%}}
+/* Shared components used on every page: FAQ, steps, comparison, case study. */
 
 /* ── generic content pages ──────────────────────────────── */
 .page-hero{padding:80px 0 36px}
