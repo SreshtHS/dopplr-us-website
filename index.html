@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://dopplr.info/public/assets/og/dopplr-og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dopplr.info/#org", "name": "Dopplr", "legalName": "Highstreet 3D, Inc.", "url": "https://dopplr.info/", "logo": "https://dopplr.info/public/assets/logos/dopplr-mark.png", "email": "sresht@highstreet3d.co"}, {"@type": "WebSite", "@id": "https://dopplr.info/#website", "url": "https://dopplr.info/", "name": "Dopplr", "publisher": {"@id": "https://dopplr.info/#org"}}, {"@type": "SoftwareApplication", "@id": "https://dopplr.info/#software", "name": "Dopplr", "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Shopify app, Salesforce Commerce Cloud, JS embed)", "publisher": {"@id": "https://dopplr.info/#org"}, "url": "https://dopplr.info/", "description": "Shows each shopper how a specific bra or dress fits her own body shape and size on the product page, from a few measurements, with no photos or camera.", "offers": [{"@type": "Offer", "name": "Trial", "price": "30", "priceCurrency": "USD", "description": "One-time fee per SKU, minimum 20 SKUs, 3-month trial, no platform fee"}, {"@type": "Offer", "name": "Platform", "price": "500", "priceCurrency": "USD", "description": "Monthly platform fee after the 3-month trial, on top of $30 per SKU one time"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dopplr.info/#org", "name": "Dopplr", "legalName": "Highstreet 3D, Inc.", "url": "https://dopplr.info/", "logo": "https://dopplr.info/public/assets/logos/dopplr-mark.png", "email": "sresht@highstreet3d.co"}, {"@type": "WebSite", "@id": "https://dopplr.info/#website", "url": "https://dopplr.info/", "name": "Dopplr", "publisher": {"@id": "https://dopplr.info/#org"}}, {"@type": "SoftwareApplication", "@id": "https://dopplr.info/#software", "name": "Dopplr", "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Shopify app, Salesforce Commerce Cloud, JS embed)", "publisher": {"@id": "https://dopplr.info/#org"}, "url": "https://dopplr.info/", "description": "Shows each shopper how a specific bra or dress fits her own body shape and size on the product page, from a few measurements, with no photos or camera.", "offers": [{"@type": "Offer", "name": "Trial", "price": "30", "priceCurrency": "USD", "description": "One-time fee per SKU, minimum 20 SKUs, 3-month trial, no platform fee"}, {"@type": "Offer", "name": "Platform (yearly)", "price": "5000", "priceCurrency": "USD", "description": "Yearly platform fee after the 3-month trial, on top of $30 per SKU one time"}, {"@type": "Offer", "name": "Platform", "price": "500", "priceCurrency": "USD", "description": "Monthly platform fee after the 3-month trial, on top of $30 per SKU one time"}]}]}
 </script>
 <link rel="icon" href="public/assets/logos/dopplr-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -691,6 +691,11 @@
   .pr-head{text-align:center;max-width:640px;margin:0 auto}
   .pr-head h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:14px 0 12px}
   .pr-head p{color:var(--ink-2);font-size:17px}
+  .billing{display:flex;width:max-content;margin:28px auto 0;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--bg-alt)}
+  .bill-opt{font:inherit;font-size:14.5px;font-weight:600;color:var(--ink-2);background:transparent;border:0;border-radius:999px;padding:9px 18px;cursor:pointer;display:flex;align-items:center;gap:8px}
+  .bill-opt.is-on{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+  .bill-opt:focus-visible{outline:2px solid var(--accent-btn,#E0104F);outline-offset:2px}
+  .bill-opt .save{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-text,#C8104A);background:color-mix(in srgb,var(--accent) 12%,transparent);padding:3px 7px;border-radius:999px}
   .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:40px auto 0;max-width:880px}
   .plan{position:relative;border:1px solid var(--line);border-radius:20px;padding:32px 28px;background:var(--bg);display:flex;flex-direction:column}
   .plan--featured{border:2px solid var(--accent-btn,#E0104F);box-shadow:0 12px 40px -18px rgba(224,16,79,.35)}
@@ -877,36 +882,41 @@
       <div class="pr-head">
         <span class="eyebrow">Pricing</span>
         <h2>Start with a 3-month trial.</h2>
-        <p>$30 one time for every SKU you put live. A $500 monthly platform fee on top, once the trial ends.</p>
+        <p>$30 one time for every SKU you put live, plus a platform fee: $0 during the trial, then $500 a month or $5,000 a year.</p>
+      </div>
+      <div class="billing" role="group" aria-label="Billing period">
+        <button type="button" class="bill-opt is-on" data-bill="m" aria-pressed="true">Monthly</button>
+        <button type="button" class="bill-opt" data-bill="y" aria-pressed="false">Yearly <span class="save">Save $1,000</span></button>
       </div>
       <div class="plans">
         <article class="plan plan--featured">
           <span class="plan-badge">Start here</span>
           <h3 class="plan-name">Trial</h3>
           <p class="plan-for">Months 1–3. Test it on your own SKUs.</p>
-          <div class="plan-price"><span class="amt">$30</span><span class="per">/ SKU, one time</span></div>
-          <p class="plan-note">Minimum 20 SKUs (from $600)</p>
+          <div class="plan-price"><span class="amt">$0</span><span class="per" data-m="/ month" data-y="for 3 months">/ month</span></div>
+          <p class="plan-note">+ $30 per SKU, one time · minimum 20 SKUs</p>
           <a class="btn btn-accent" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Start a trial →</a>
           <ul class="plan-list">
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>3 months</li>
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Minimum 20 SKUs</li>
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$0 platform fee during the trial</li>
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$0 platform fee for 3 months</li>
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$30 per SKU, one time</li>
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Minimum 20 SKUs ($600)</li>
           </ul>
         </article>
         <article class="plan">
           <h3 class="plan-name">Platform</h3>
           <p class="plan-for">Month 4 onwards. Keep it running and add styles.</p>
-          <div class="plan-price"><span class="amt">$500</span><span class="per">/ month</span></div>
+          <div class="plan-price"><span class="amt" data-m="$500" data-y="$5,000">$500</span><span class="per" data-m="/ month" data-y="/ year">/ month</span></div>
           <p class="plan-note">+ $30 per SKU, one time</p>
           <a class="btn btn-ghost" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
           <ul class="plan-list">
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Starts when the 3-month trial ends</li>
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-m="$500 platform fee per month" data-y="$5,000 platform fee per year">$500 platform fee per month</span></li>
             <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$30 per SKU, one time, for every SKU you add</li>
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Starts when the 3-month trial ends</li>
           </ul>
         </article>
       </div>
       <div class="pr-rows">
-        <div class="pr-row"><span class="k">Example</span><p>20 SKUs in the trial: <b>$600</b> for months 1–3. From month 4: <b>$500 per month</b>, plus <b>$30 one time</b> for each SKU you add.</p></div>
+        <div class="pr-row"><span class="k">Example</span><p>20 SKUs in the trial: <b>$600</b> for months 1–3. From month 4: <b data-m="$500 per month" data-y="$5,000 per year">$500 per month</b>, plus <b>$30 one time</b> for each SKU you add.</p></div>
         <div class="pr-row"><span class="k">What we need</span><p>Your <b>CLO 3D files</b> for the SKUs in the trial.</p></div>
       </div>
       <p class="pr-foot">All prices in USD. More questions? <a href="faq.html">See the FAQ</a>.</p>
@@ -977,5 +987,16 @@
 })();
 </script>
 <script src="public/js/site.js" defer></script>
+<script>
+(function(){
+  var opts=document.querySelectorAll('.bill-opt');
+  opts.forEach(function(b){ b.addEventListener('click',function(){
+    var k=b.dataset.bill;
+    opts.forEach(function(o){ var on=o===b; o.classList.toggle('is-on',on); o.setAttribute('aria-pressed',on); });
+    document.querySelectorAll('#pricing [data-m]').forEach(function(el){ el.textContent=el.dataset[k]; });
+    try{ window.gtag && window.gtag('event','billing_toggle',{period:k==='y'?'yearly':'monthly'}); }catch(e){}
+  });});
+})();
+</script>
 </body>
 </html>
