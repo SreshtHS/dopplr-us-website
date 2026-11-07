@@ -20,6 +20,7 @@ Dopplr (by Highstreet 3D, Inc.) is a privacy-first alternative to image-based vi
 - [Dresswear](https://dopplr.info/dresswear): the same dress on a shopper's body shape and height, with an interactive hem demo
 - [How it works](https://dopplr.info/how-it-works): setup steps, what a brand provides per category, what the shopper does, how results are measured
 - [Results: Enamor](https://dopplr.info/results-enamor): innerwear deployment results with observed/modeled labels
+- [Pricing](https://dopplr.info/pricing): 3-month trial ($0 platform fee, $30 per SKU one time, minimum 20 SKUs), then $500/month or $5,000/year
 - [FAQ](https://dopplr.info/faq): setup, pricing, results, shopper experience, data
 - [Compare](https://dopplr.info/compare): Dopplr vs generative AI try-on vs size charts
 - [Security & Privacy](https://dopplr.info/security.html): data handling, no biometric data, compliance posture

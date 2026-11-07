@@ -687,37 +687,6 @@
   .start-card dt{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
   .start-card dd{font-size:15.5px;color:var(--ink-2)}
   .start-card .btn{align-self:flex-start;margin-top:auto}
-  .pricing{padding:88px 0;border-top:1px solid var(--line)}
-  .pr-head{text-align:center;max-width:640px;margin:0 auto}
-  .pr-head h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:14px 0 12px}
-  .pr-head p{color:var(--ink-2);font-size:17px}
-  .billing{display:flex;width:max-content;margin:28px auto 0;padding:4px;border:1px solid var(--line);border-radius:999px;background:var(--bg-alt)}
-  .bill-opt{font:inherit;font-size:14.5px;font-weight:600;color:var(--ink-2);background:transparent;border:0;border-radius:999px;padding:9px 18px;cursor:pointer;display:flex;align-items:center;gap:8px}
-  .bill-opt.is-on{background:var(--bg);color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
-  .bill-opt:focus-visible{outline:2px solid var(--accent-btn,#E0104F);outline-offset:2px}
-  .bill-opt .save{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-text,#C8104A);background:color-mix(in srgb,var(--accent) 12%,transparent);padding:3px 7px;border-radius:999px}
-  .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:40px auto 0;max-width:880px}
-  .plan{position:relative;border:1px solid var(--line);border-radius:20px;padding:32px 28px;background:var(--bg);display:flex;flex-direction:column}
-  .plan--featured{border:2px solid var(--accent-btn,#E0104F);box-shadow:0 12px 40px -18px rgba(224,16,79,.35)}
-  .plan-badge{position:absolute;top:-13px;left:28px;background:var(--accent-btn,#E0104F);color:#fff;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
-  .plan-name{font-size:22px;font-weight:800;letter-spacing:-.02em}
-  .plan-for{color:var(--ink-2);font-size:15px;margin-top:4px}
-  .plan-price{display:flex;align-items:baseline;gap:8px;margin-top:22px}
-  .plan-price .amt{font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1}
-  .plan-price .per{color:var(--ink-2);font-size:16px}
-  .plan-note{font-size:14px;color:var(--muted);margin-top:8px;min-height:1.4em}
-  .plan .btn{margin-top:22px;justify-content:center;text-align:center}
-  .plan-list{list-style:none;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:12px}
-  .plan-list li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;color:var(--ink-2)}
-  .plan-list .ic{flex:none;margin-top:3px;color:var(--accent-text,#C8104A)}
-  .pr-rows{max-width:880px;margin:24px auto 0;border:1px solid var(--line);border-radius:20px;background:var(--bg-alt)}
-  .pr-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:18px 28px;align-items:baseline}
-  .pr-row+.pr-row{border-top:1px solid var(--line)}
-  .pr-row .k{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text,#C8104A)}
-  .pr-row p{font-size:16px;color:var(--ink-2)}.pr-row b{color:var(--ink)}
-  .pr-foot{text-align:center;color:var(--muted);font-size:14px;margin-top:20px}
-  .pr-foot a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
-  @media (max-width:760px){.plans{grid-template-columns:1fr;gap:28px}.pr-row{grid-template-columns:1fr;gap:4px;padding:16px 20px}.plan{padding:28px 22px}}
   @media (max-width:880px){.start-grid{grid-template-columns:1fr}.ht-div{display:none}}
   @media (max-width:560px){.start-card dl div{grid-template-columns:1fr;gap:2px}.start-card{padding:22px 18px}}
   @media (max-width:880px){
@@ -741,6 +710,7 @@
       <a href="innerwear.html">Innerwear</a>
       <a href="dresswear.html">Dresswear</a>
       <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
       <a href="results-enamor.html">Results</a>
       <a href="faq.html">FAQ</a>
       <a class="m-only" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
@@ -877,51 +847,6 @@
     </div>
   </section>
 
-  <section class="pricing" id="pricing">
-    <div class="wrap">
-      <div class="pr-head">
-        <span class="eyebrow">Pricing</span>
-        <h2>Start with a 3-month trial.</h2>
-        <p>$30 one time for every SKU you put live, plus a platform fee: $0 during the trial, then $500 a month or $5,000 a year.</p>
-      </div>
-      <div class="billing" role="group" aria-label="Billing period">
-        <button type="button" class="bill-opt is-on" data-bill="m" aria-pressed="true">Monthly</button>
-        <button type="button" class="bill-opt" data-bill="y" aria-pressed="false">Yearly <span class="save">Save $1,000</span></button>
-      </div>
-      <div class="plans">
-        <article class="plan plan--featured">
-          <span class="plan-badge">Start here</span>
-          <h3 class="plan-name">Trial</h3>
-          <p class="plan-for">Months 1–3. Test it on your own SKUs.</p>
-          <div class="plan-price"><span class="amt">$0</span><span class="per" data-m="/ month" data-y="for 3 months">/ month</span></div>
-          <p class="plan-note">+ $30 per SKU, one time · minimum 20 SKUs</p>
-          <a class="btn btn-accent" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Start a trial →</a>
-          <ul class="plan-list">
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$0 platform fee for 3 months</li>
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$30 per SKU, one time</li>
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Minimum 20 SKUs ($600)</li>
-          </ul>
-        </article>
-        <article class="plan">
-          <h3 class="plan-name">Platform</h3>
-          <p class="plan-for">Month 4 onwards. Keep it running and add styles.</p>
-          <div class="plan-price"><span class="amt" data-m="$500" data-y="$5,000">$500</span><span class="per" data-m="/ month" data-y="/ year">/ month</span></div>
-          <p class="plan-note">+ $30 per SKU, one time</p>
-          <a class="btn btn-ghost" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
-          <ul class="plan-list">
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-m="$500 platform fee per month" data-y="$5,000 platform fee per year">$500 platform fee per month</span></li>
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$30 per SKU, one time, for every SKU you add</li>
-            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Starts when the 3-month trial ends</li>
-          </ul>
-        </article>
-      </div>
-      <div class="pr-rows">
-        <div class="pr-row"><span class="k">What we need</span><p>Your <b>CLO 3D files</b> for the SKUs in the trial.</p></div>
-      </div>
-      <p class="pr-foot">All prices in USD. More questions? <a href="faq.html">See the FAQ</a>.</p>
-    </div>
-  </section>
-
   <section class="contact wrap" id="contact">
     <div class="contact-card">
       <div class="contact-inner">
@@ -970,6 +895,7 @@
     <div class="foot-col">
       <h3 class="fh">Get started</h3>
       <a href="how-it-works.html">How it works</a>
+      <a href="pricing.html">Pricing</a>
       <a href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
     </div>
   </div>
@@ -986,16 +912,5 @@
 })();
 </script>
 <script src="public/js/site.js" defer></script>
-<script>
-(function(){
-  var opts=document.querySelectorAll('.bill-opt');
-  opts.forEach(function(b){ b.addEventListener('click',function(){
-    var k=b.dataset.bill;
-    opts.forEach(function(o){ var on=o===b; o.classList.toggle('is-on',on); o.setAttribute('aria-pressed',on); });
-    document.querySelectorAll('#pricing [data-m]').forEach(function(el){ el.textContent=el.dataset[k]; });
-    try{ window.gtag && window.gtag('event','billing_toggle',{period:k==='y'?'yearly':'monthly'}); }catch(e){}
-  });});
-})();
-</script>
 </body>
 </html>
