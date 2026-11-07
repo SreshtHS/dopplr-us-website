@@ -1011,9 +1011,9 @@
       <!-- scope your pilot together -->
       <div class="scoper">
         <div class="scoper-in">
-          <span class="pn">01 · Pilot</span>
-          <h3>Scope your pilot together.</h3>
-          <p class="scoper-lead">Three numbers from you, and we size a pilot that reaches a statistically significant read on conversion and returns, not a vanity metric.</p>
+          <span class="pn">01 · Trial</span>
+          <h3>Scope your trial together.</h3>
+          <p class="scoper-lead">Three numbers from you, and we size a trial that reaches a statistically significant read on conversion and returns, not a vanity metric.</p>
           <label class="fld sel"><span>Your monthly traffic</span>
             <select id="sc-traffic">
               <option value="35000">Under 50,000 sessions</option>
@@ -1040,7 +1040,7 @@
             </select></label>
         </div>
         <div class="scoper-out">
-          <span class="eyebrow">Your scoped pilot</span>
+          <span class="eyebrow">Your scoped trial</span>
           <div class="sc-big"><span id="sc-sessions">73,000</span> <span class="u">sessions</span></div>
           <p class="sc-sub">for a 95%-confident read on a <b>15% lift</b> (conversion + returns).</p>
           <div class="sc-rec">
@@ -1050,7 +1050,7 @@
           </div>
           <p class="sc-work" id="sc-working"></p>
           <div class="sc-cta">
-            <a class="btn btn-accent" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a pilot →</a>
+            <a class="btn btn-accent" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Start a trial →</a>
             <button class="btn-copy" id="sc-copy" type="button"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h10"/></svg><span class="lbl">Copy scope</span></button>
           </div>
         </div>
@@ -1061,12 +1061,12 @@
         <div class="phase2">
           <span class="pn">02</span>
           <h3>Measure</h3>
-          <p>Engagement, conversion, and returns, scored against the success criteria you set before launch, so the pilot is judged on your number, not ours.</p>
+          <p>Engagement, conversion, and returns, scored against the success criteria you set before launch, so the trial is judged on your number, not ours.</p>
         </div>
         <div class="phase2">
           <span class="pn">03</span>
           <h3>Grow</h3>
-          <p>Clear the bar and stay live: a $500 per month platform fee starts after the 3-month pilot.</p>
+          <p>Clear the bar and stay live: a $500 per month platform fee starts after the 3-month trial.</p>
         </div>
       </div>
     </div>
@@ -1114,7 +1114,7 @@
         <div>
           <span class="eyebrow">Talk to sales</span>
           <h2>Talk to us.</h2>
-          <p>Whether you're scoping a pilot, running a security review, or just want to see Dopplr on your own product, our team will help. Book a call, or send us a note.</p>
+          <p>Whether you're scoping a trial, running a security review, or just want to see Dopplr on your own product, our team will help. Book a call, or send us a note.</p>
         </div>
         <div class="cmeta">
           <div class="row"><span class="k">US support &amp; sales</span><span class="v">Mon–Fri · 9:00am–6:00pm ET</span></div>
@@ -1370,11 +1370,11 @@
       (over ? ', which runs past the 3-month window, so we would extend it or read the trend early.' : '.');
 
     copyText =
-      'Dopplr pilot scope\n' +
+      'Dopplr trial scope\n' +
       '- ' + fmt(mt) + ' monthly sessions, ' + fmt(st) + ' styles, ' + (pc*100).toFixed(1) + '% conversion, ' + Math.round(pr*100) + '% returns\n' +
       '- ~' + fmt(total) + ' sessions for a 95%-confident read on a 15% lift (conversion + returns)\n' +
       '- Recommended: ' + (allStyles ? 'all ' + fmt(st) : 'top ' + fmt(pilot)) + ' styles, ~' + weeks + ' weeks\n' +
-      '- Pilot: $30 per SKU one time (min 20 SKUs), 3 months, no platform fee; then $500/month';
+      '- Trial: $30 per SKU one time (min 20 SKUs), 3 months, no platform fee; then $500/month';
   }
 
   [traffic, stylesEl, convEl, retEl].forEach(function(e){

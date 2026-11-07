@@ -14,7 +14,7 @@
 <meta property="og:image" content="https://dopplr.info/public/assets/og/dopplr-og.png" />
 <meta name="twitter:card" content="summary_large_image" />
 <script type="application/ld+json">
-{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dopplr.info/#org", "name": "Dopplr", "legalName": "Highstreet 3D, Inc.", "url": "https://dopplr.info/", "logo": "https://dopplr.info/public/assets/logos/dopplr-mark.png", "email": "sresht@highstreet3d.co"}, {"@type": "WebSite", "@id": "https://dopplr.info/#website", "url": "https://dopplr.info/", "name": "Dopplr", "publisher": {"@id": "https://dopplr.info/#org"}}, {"@type": "SoftwareApplication", "@id": "https://dopplr.info/#software", "name": "Dopplr", "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Shopify app, Salesforce Commerce Cloud, JS embed)", "publisher": {"@id": "https://dopplr.info/#org"}, "url": "https://dopplr.info/", "description": "Shows each shopper how a specific bra or dress fits her own body shape and size on the product page, from a few measurements, with no photos or camera.", "offers": [{"@type": "Offer", "name": "Pilot", "price": "30", "priceCurrency": "USD", "description": "One-time fee per SKU, minimum 20 SKUs, 3-month pilot, no platform fee"}, {"@type": "Offer", "name": "Platform", "price": "500", "priceCurrency": "USD", "description": "Monthly platform fee after the 3-month pilot"}]}]}
+{"@context": "https://schema.org", "@graph": [{"@type": "Organization", "@id": "https://dopplr.info/#org", "name": "Dopplr", "legalName": "Highstreet 3D, Inc.", "url": "https://dopplr.info/", "logo": "https://dopplr.info/public/assets/logos/dopplr-mark.png", "email": "sresht@highstreet3d.co"}, {"@type": "WebSite", "@id": "https://dopplr.info/#website", "url": "https://dopplr.info/", "name": "Dopplr", "publisher": {"@id": "https://dopplr.info/#org"}}, {"@type": "SoftwareApplication", "@id": "https://dopplr.info/#software", "name": "Dopplr", "applicationCategory": "BusinessApplication", "operatingSystem": "Web (Shopify app, Salesforce Commerce Cloud, JS embed)", "publisher": {"@id": "https://dopplr.info/#org"}, "url": "https://dopplr.info/", "description": "Shows each shopper how a specific bra or dress fits her own body shape and size on the product page, from a few measurements, with no photos or camera.", "offers": [{"@type": "Offer", "name": "Trial", "price": "30", "priceCurrency": "USD", "description": "One-time fee per SKU, minimum 20 SKUs, 3-month trial, no platform fee"}, {"@type": "Offer", "name": "Platform", "price": "500", "priceCurrency": "USD", "description": "Monthly platform fee after the 3-month trial"}]}]}
 </script>
 <link rel="icon" href="public/assets/logos/dopplr-mark.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -687,9 +687,32 @@
   .start-card dt{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
   .start-card dd{font-size:15.5px;color:var(--ink-2)}
   .start-card .btn{align-self:flex-start;margin-top:auto}
-  .need{margin-top:24px;border:1px solid var(--line);border-radius:20px;padding:20px 28px;display:flex;gap:24px;align-items:baseline;background:var(--bg-alt)}
-  .need p{font-size:16px;color:var(--ink);font-weight:600}
-  @media (max-width:560px){.need{flex-direction:column;gap:6px;padding:18px}}
+  .pricing{padding:88px 0;border-top:1px solid var(--line)}
+  .pr-head{text-align:center;max-width:640px;margin:0 auto}
+  .pr-head h2{font-size:clamp(30px,4vw,46px);line-height:1.05;letter-spacing:-.03em;font-weight:800;margin:14px 0 12px}
+  .pr-head p{color:var(--ink-2);font-size:17px}
+  .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;margin:40px auto 0;max-width:880px}
+  .plan{position:relative;border:1px solid var(--line);border-radius:20px;padding:32px 28px;background:var(--bg);display:flex;flex-direction:column}
+  .plan--featured{border:2px solid var(--accent-btn,#E0104F);box-shadow:0 12px 40px -18px rgba(224,16,79,.35)}
+  .plan-badge{position:absolute;top:-13px;left:28px;background:var(--accent-btn,#E0104F);color:#fff;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:5px 10px;border-radius:999px}
+  .plan-name{font-size:22px;font-weight:800;letter-spacing:-.02em}
+  .plan-for{color:var(--ink-2);font-size:15px;margin-top:4px}
+  .plan-price{display:flex;align-items:baseline;gap:8px;margin-top:22px}
+  .plan-price .amt{font-size:52px;font-weight:800;letter-spacing:-.04em;line-height:1}
+  .plan-price .per{color:var(--ink-2);font-size:16px}
+  .plan-note{font-size:14px;color:var(--muted);margin-top:8px;min-height:1.4em}
+  .plan .btn{margin-top:22px;justify-content:center;text-align:center}
+  .plan-list{list-style:none;margin-top:24px;padding-top:20px;border-top:1px solid var(--line);display:grid;gap:12px}
+  .plan-list li{display:flex;gap:10px;align-items:flex-start;font-size:15.5px;color:var(--ink-2)}
+  .plan-list .ic{flex:none;margin-top:3px;color:var(--accent-text,#C8104A)}
+  .pr-rows{max-width:880px;margin:24px auto 0;border:1px solid var(--line);border-radius:20px;background:var(--bg-alt)}
+  .pr-row{display:grid;grid-template-columns:150px 1fr;gap:16px;padding:18px 28px;align-items:baseline}
+  .pr-row+.pr-row{border-top:1px solid var(--line)}
+  .pr-row .k{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-text,#C8104A)}
+  .pr-row p{font-size:16px;color:var(--ink-2)}.pr-row b{color:var(--ink)}
+  .pr-foot{text-align:center;color:var(--muted);font-size:14px;margin-top:20px}
+  .pr-foot a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+  @media (max-width:760px){.plans{grid-template-columns:1fr;gap:28px}.pr-row{grid-template-columns:1fr;gap:4px;padding:16px 20px}.plan{padding:28px 22px}}
   @media (max-width:880px){.start-grid{grid-template-columns:1fr}.ht-div{display:none}}
   @media (max-width:560px){.start-card dl div{grid-template-columns:1fr;gap:2px}.start-card{padding:22px 18px}}
   @media (max-width:880px){
@@ -849,33 +872,44 @@
     </div>
   </section>
 
-  <section class="start" id="pricing">
+  <section class="pricing" id="pricing">
     <div class="wrap">
-      <div class="how-head">
+      <div class="pr-head">
         <span class="eyebrow">Pricing</span>
-        <h2>Pilot first. Platform fee only after.</h2>
+        <h2>Start with a 3-month trial.</h2>
+        <p>A one-time fee per SKU to try it on your own styles. A monthly platform fee only once the trial ends.</p>
       </div>
-      <div class="start-grid">
-        <div class="start-card">
-          <span class="cat-k">Pilot · Months 1–3</span>
-          <h3>$30 per SKU, one time</h3>
-          <dl>
-            <div><dt>Minimum</dt><dd>20 SKUs ($600)</dd></div>
-            <div><dt>Timeframe</dt><dd>3 months</dd></div>
-            <div><dt>Platform fee</dt><dd>$0 during the pilot</dd></div>
-          </dl>
-          <a class="btn btn-accent" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a pilot →</a>
-        </div>
-        <div class="start-card">
-          <span class="cat-k">After the pilot · Month 4 on</span>
-          <h3>$500 per month</h3>
-          <dl>
-            <div><dt>Platform fee</dt><dd>$500 per month</dd></div>
-            <div><dt>Starts</dt><dd>Once the 3-month pilot ends</dd></div>
-          </dl>
-        </div>
+      <div class="plans">
+        <article class="plan plan--featured">
+          <span class="plan-badge">Start here</span>
+          <h3 class="plan-name">Trial</h3>
+          <p class="plan-for">Months 1–3. Test it on your own SKUs.</p>
+          <div class="plan-price"><span class="amt">$30</span><span class="per">/ SKU, one time</span></div>
+          <p class="plan-note">Minimum 20 SKUs (from $600)</p>
+          <a class="btn btn-accent" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Start a trial →</a>
+          <ul class="plan-list">
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>3 months</li>
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Minimum 20 SKUs</li>
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>$0 platform fee during the trial</li>
+          </ul>
+        </article>
+        <article class="plan">
+          <h3 class="plan-name">Platform</h3>
+          <p class="plan-for">Month 4 onwards. Keep it running.</p>
+          <div class="plan-price"><span class="amt">$500</span><span class="per">/ month</span></div>
+          <p class="plan-note">Platform fee, starts after the trial</p>
+          <a class="btn btn-ghost" href="https://calendar.app.google/67bdHT71dR5V6fka7" target="_blank" rel="noopener">Book a demo</a>
+          <ul class="plan-list">
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Starts when the 3-month trial ends</li>
+            <li><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>One monthly fee</li>
+          </ul>
+        </article>
       </div>
-      <div class="need"><span class="cat-k">What we need</span><p>Your CLO 3D files for the SKUs in the pilot.</p></div>
+      <div class="pr-rows">
+        <div class="pr-row"><span class="k">Example</span><p>20 SKUs: <b>$600 one time</b> for months 1–3, then <b>$500 per month</b>.</p></div>
+        <div class="pr-row"><span class="k">What we need</span><p>Your <b>CLO 3D files</b> for the SKUs in the trial.</p></div>
+      </div>
+      <p class="pr-foot">All prices in USD. More questions? <a href="faq.html">See the FAQ</a>.</p>
     </div>
   </section>
 

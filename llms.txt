@@ -7,7 +7,7 @@ Dopplr (by Highstreet 3D, Inc.) is a privacy-first alternative to image-based vi
 ## Key facts
 - Category: fit intelligence / fit technology for ecommerce; a virtual try-on alternative and size-recommendation alternative for innerwear and dresswear
 - Built for: innerwear (minimiser, sports and everyday bras), live; dresswear (hem position by height, fit by body shape), early access
-- Pricing: pilot at $30 per SKU one time (minimum 20 SKUs), 3 months, no platform fee; then a $500/month platform fee. Needs CLO 3D files for the pilot SKUs
+- Pricing: trial at $30 per SKU one time (minimum 20 SKUs), 3 months, no platform fee; then a $500/month platform fee. Needs CLO 3D files for the trial SKUs
 - How it works: models garment construction (band, cup, wire, coverage, fabric behavior) together with a shopper's measurements and bust shape to produce a personalized fit answer on the product page
 - Privacy: no photos, no camera, no biometric data; measurements only
 - Outcomes (innerwear, Enamor deployment): 19% first-time-buyer conversion lift and 3.5x product-page engagement (observed); 17% fewer fit-related returns (modeled). No dresswear results yet.
