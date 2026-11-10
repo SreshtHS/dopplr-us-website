@@ -23,8 +23,8 @@ Dopplr (by Highstreet 3D, Inc.) is a privacy-first alternative to image-based vi
 - [Pricing](https://dopplr.info/pricing): 3-month trial ($0 platform fee, $30 per SKU one time, minimum 20 SKUs), then $500/month or $5,000/year
 - [FAQ](https://dopplr.info/faq): setup, pricing, results, shopper experience, data
 - [Compare](https://dopplr.info/compare): Dopplr vs generative AI try-on vs size charts
-- [Security & Privacy](https://dopplr.info/security.html): data handling, no biometric data, compliance posture
-- [Privacy Policy](https://dopplr.info/privacy.html)
+- [Security & Privacy](https://dopplr.info/security): data handling, no biometric data, compliance posture
+- [Privacy Policy](https://dopplr.info/privacy)
 
 ## Contact
 - Email: sresht@highstreet3d.co
